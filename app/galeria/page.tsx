@@ -1,4 +1,4 @@
-import { Gallery } from "../_components/gallery"
+import Gallery from "../_components/gallery"
 import Title from "../_components/title"
 
 const images = [

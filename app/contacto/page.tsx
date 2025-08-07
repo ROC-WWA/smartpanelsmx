@@ -3,6 +3,8 @@
 import { useState } from "react";
 import SocialNetworks from "../_components/social";
 import Title from "../_components/title";
+import Link from "next/link";
+import { CheckIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 
 export default function Contacto() {
 	const [ name, setName ] = useState("");
@@ -58,13 +60,19 @@ export default function Contacto() {
 						<p className="mb-2 text-green-600 font-semibold">
 							Atención a clientes:
 						</p>
-						<p className="mb-1">
-							<i className="fas fa-phone-alt text-green-500 mr-2" /> 56 1019
-							7622
-						</p>
+						<div>
+								<Link href="tel:+521234567890">
+									{" "}
+									<PhoneIcon className="inline mr-2 text-green-500 size-4" /> +52 123 456
+									7890
+								</Link>
+							</div>
 						<p className="mb-4">
-							<i className="fas fa-envelope text-green-500 mr-2" />{" "}
-							atencionaclientes1@smartpanel.mx
+							<Link href="mailto:atencionaclientes1@smartpanel.mx">
+									{" "}
+									<EnvelopeIcon className="inline mr-2 text-green-500 size-4" />{" "}
+									atencionaclientes1@smartpanel.mx
+								</Link>
 						</p>
 						<p className="mb-2 font-semibold">Planta</p>
 						<p className="mb-4 text-gray-700">
@@ -83,7 +91,7 @@ export default function Contacto() {
 							<input
 								type="text"
 								placeholder="Nombre*"
-								className="w-full border border-gray-300 rounded-md px-4 py-2"
+								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
 								value={name}
 								onChange={(e) => setName(e.target.value)}
 							/>
@@ -91,14 +99,14 @@ export default function Contacto() {
 								<input
 									type="email"
 									placeholder="Email*"
-									className="w-full border border-gray-300 rounded-md px-4 py-2"
+									className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 								/>
 								<input
 									type="text"
 									placeholder="Teléfono*"
-									className="w-full border border-gray-300 rounded-md px-4 py-2"
+									className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
 									value={phone}
 									onChange={(e) => setPhone(e.target.value)}
 								/>
@@ -106,14 +114,14 @@ export default function Contacto() {
 							<input
 								type="text"
 								placeholder="Asunto"
-								className="w-full border border-gray-300 rounded-md px-4 py-2"
+								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
 								value={subject}
 								onChange={(e) => setSubject(e.target.value)}
 							/>
 							<textarea
 								rows={5}
 								placeholder="Mensaje"
-								className="w-full border border-gray-300 rounded-md px-4 py-2"
+								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
 							/>

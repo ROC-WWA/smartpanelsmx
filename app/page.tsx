@@ -1,62 +1,60 @@
-import Image from "next/image";
+'use client';
 import Slideshow from "./_components/slideshow";
 import { Check, Mail, Phone } from "lucide-react";
 import Sector from "./_components/sector";
 import Feature from "./_components/features";
 import Subtitle from "./_components/subtitle";
-import { title } from "process";
 import Reason from "./_components/reasons";
-import { applications } from "./_components/application";
-import Application from "./_components/application";
 import Testimonial from "./_components/testimonial";
 import FAQ from "./_components/faq";
 import { faqs } from "./_components/faq";
-import { MapIcon } from "@heroicons/react/24/solid";
 import { MapPinIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import SocialNetworks from "./_components/social";
+import { CldImage } from "next-cloudinary";
+
 const sectors = [
 	{
 		title: "Farmacéutico",
 		description:
 			"Espacios limpios, controlados y eficientes para cumplir con los más altos estándares sanitarios.",
-		image: "/smart-panel-sector-farmaceutico.png",
+		image: "smart-panel-sector-farmaceutico_zqju5p",
 	},
 	{
 		title: "Alimenticio",
 		description:
 			"Soluciones higiénicas y térmicamente eficientes para áreas de producción y almacenamiento.",
-		image: "/smart-panel-sector-alimenticio.png",
+		image: "smart-panel-sector-alimenticio_oaei4x",
 	},
 	{
 		title: "Comercial",
 		description:
 			"Construcción ágil y estética para tiendas, plazas y centros de distribución.",
-		image: "/smart-panel-sector-comercial.png",
+		image: "smart-panel-sector-comercial_vgvwhi",
 	},
 	{
 		title: "Institucional",
 		description:
 			"Infraestructura duradera y funcional para escuelas, hospitales y dependencias gubernamentales.",
-		image: "/smart-panel-sector-institucional.png",
+		image: "smart-panel-sector-institucional_klub09",
 	},
 	{
 		title: "Industrial",
 		description:
 			"Paneles para naves, plantas y almacenes con alto desempeño térmico y estructural.",
-		image: "/smart-panel-sector-industrial.png",
+		image: "smart-panel-sector-industrial_xpooqo",
 	},
 	{
 		title: "Automotriz",
 		description:
 			"Sistemas eficientes que optimizan procesos, control ambiental y seguridad industrial.",
-		image: "/smart-panel-sector-automotriz.png",
+		image: "smart-panel-sector-automotriz_e6wkja",
 	},
 	{
 		title: "Residencial",
 		description:
 			"Confort térmico, rapidez constructiva y diseño moderno para viviendas sustentables.",
-		image: "/smart-panel-sector-residencial.png",
+		image: "smart-panel-sector-residencial_odisim",
 	},
 ];
 
@@ -92,32 +90,32 @@ const reasonsToChooseUs = [
 		title: "Materiales",
 		description:
 			"Materiales prefabricados con alto rendimiento térmico y estructural",
-		image: "smart-panel-icon3.png",
+		image: "smart-panel-icon3_nz06t0",
 	},
 	{
 		title: "Soluciones adaptables",
 		description: "Soluciones adaptables a todo tipo de proyectos",
-		image: "/smart-panel-icon2.png",
+		image: "smart-panel-icon2_sxim6n",
 	},
 	{
 		title: "Entregas",
 		description: "Entregas a todo México",
-		image: "/smart-panel-icon3.png",
+		image: "smart-panel-icon3_nz06t0",
 	},
 	{
 		title: "Instalación rápida",
 		description: "Instalación rápida y limpia sin obra húmeda",
-		image: "/smart-panel-icon4.png",
+		image: "smart-panel-icon4_avnhd5",
 	},
 	{
 		title: "Personalización",
 		description: "Cortes personalizados y asesoría técnica incluida",
-		image: "/smart-panel-icon5.png",
+		image: "smart-panel-icon5_gwavtw",
 	},
 	{
 		title: "Energía Optimizada",
 		description: "Materiales de bajo consumo eléctrico para su producción",
-		image: "/smart-panel-icon5.png",
+		image: "smart-panel-icon5_gwavtw",
 	},
 ];
 
@@ -129,10 +127,15 @@ export default function Home() {
 			{/* Sustainable Future Section */}
 			<section className="py-20 bg-white">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
-					<img
-						src="/smart-panel-work.png"
-						alt="Construction worker installing solar panel"
-						className="w-full"
+					<CldImage
+						src="smart-panel-work_z7wlox" 
+						width="500"
+						alt="Smart Panel Image"
+						height="500"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
 					/>
 					<div>
 						<Subtitle text="smart panel" />
@@ -193,11 +196,16 @@ export default function Home() {
 			>
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center justify-between px-6">
 					<div className="">
-						<img
-							src="/smart-panel-construccion.png"
-							alt="Modern facility with energy-efficient design"
-							className="md:mb-0 w-full"
-						/>
+						<CldImage
+						src="smart-panel-construccion_v2bhdy" 
+						width="500"
+						alt="Smart Panel Image"
+						height="500"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+					/>
 					</div>
 					<div className="ml-0 md:ml-10">
 						<Subtitle text="smart panel" />
@@ -243,11 +251,17 @@ export default function Home() {
 				</div>
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
 					<div className="text-center">
-						<img
-							src="/smart-panel-panel-muro.png"
-							alt="Insulated roof panel with layers shown"
-							className="mx-auto mb-4"
-						/>
+						<CldImage
+						className="mx-auto mb-4"
+						src="smart-panel-panel-muro_k40rdl" 
+						width="340"
+						alt="Smart Panel Image"
+						height="340"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+					/>
 						<h3 className="font-bold text-xl mb-2 text-left">
 							Panel MURO SP / PLAFÓN
 						</h3>
@@ -258,11 +272,17 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="text-center">
-						<img
-							src="/smart-panel-panel-techo.png"
-							alt="Wall panel with insulation section"
-							className="mx-auto mb-4"
-						/>
+						<CldImage
+						className="mx-auto mb-4"
+						src="smart-panel-panel-techo_ypjoat" 
+						width="340"
+						alt="Smart Panel Image"
+						height="340"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+					/>
 						<h3 className="font-bold text-xl mb-2 text-left">Panel TECHO SP</h3>
 						<p className="text-gray-600 text-left">
 							Panel prefabricado tipo sándwich. Disponibles en varias opciones
@@ -320,12 +340,17 @@ export default function Home() {
 								del medio ambiente. Por eso, todos nuestros productos están
 								diseñados para:
 							</p>
-
-							<img
-								src="/smart-panel-ambienteplaneta.png"
-								alt="Eco-friendly construction panel"
+							<CldImage
 								className="w-full mt-6"
-							/>
+						src="smart-panel-ambienteplaneta_zno7uo"
+						width="543"
+						alt="Smart Panel Planet Decision"
+						height="340"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+				/>
 						</div>
 						<div className="space-y-3">
 							{features.map((feature, index) => (
@@ -360,10 +385,16 @@ export default function Home() {
 							))}
 						</div>
 						<div className="w-1/3">
-							<img
-								src="/smart-panel-nave2.png"
-								alt="Smart Panel Material"
-								className="mx-auto"
+							<CldImage
+									className="mx-auto"
+									src="smart-panel-nave2_co7g51"
+									width="400"
+									alt="Smart Panel Reasons"
+									height="400"
+									crop={{
+										type: "auto",
+										source: true,
+									}}
 							/>
 						</div>
 						<div className="w-1/3">
@@ -383,11 +414,17 @@ export default function Home() {
 			{/* About Us */}
 			<section className=" bg-gray-950 text-white">
 				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-					<img
-						src="/smart-panel-nosotros.png"
-						alt="Team of professionals in business meeting"
+					<CldImage
 						className="w-full object-contain h-full md:col-span-1"
-					/>
+						src="smart-panel-nosotros_i6l1sd"
+						width="556"
+						alt="Somos Smart Panel"
+						height="532"
+						crop={{
+							type: "fit",
+							source: true,
+						}}
+				/>
 					<div className="py-20 md:col-span-1">
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">¿Quiénes Somos?</h2>
@@ -416,22 +453,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			{/* Applications */}
-			<section className="py-20 bg-white">
-				<div className="max-w-6xl mx-auto px-6">
-					<h2 className="text-3xl font-bold mb-10 text-center">Aplicaciones</h2>
-					<div className="grid md:grid-cols-4 gap-4">
-						{applications.map((app, index) => (
-							<Application
-								key={index}
-								image={app.image}
-								link={app.link}
-								title={app.title}
-							/>
-						))}
-					</div>
-				</div>
-			</section>
+
 			{/* Testimonials */}
 			<section className="bg-gray-950 text-white py-20">
 				<div className="max-w-6xl mx-auto px-6 text-center">
@@ -441,22 +463,38 @@ export default function Home() {
 				</div>
 			</section>
 
-			<div className="py-20" 
-			style={{ backgroundImage: "url('/smart-panel-mexico-paneles-prefabricados-clientes.webp')", backgroundSize: "cover" }}>
-				<h3 className="text-3xl font-bold mb-4 text-center text-white">Preguntas Frecuentes</h3>
+			<div
+				className="py-20"
+				style={{
+					backgroundImage:
+						"url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513811/smart-panel-mexico-paneles-prefabricados-clientes_asugcs.webp')",
+					backgroundSize: "cover",
+				}}
+			>
+				<h3 className="text-3xl font-bold mb-4 text-center text-white">
+					Preguntas Frecuentes
+				</h3>
 				<div className="max-w-6xl mx-auto px-6 py-10 space-y-2">
-				{
-					faqs.map((faq, index) => (
+					{faqs.map((faq, index) => (
 						<FAQ key={index} question={faq.question} answer={faq.answer} />
-					))
-				}
+					))}
 				</div>
 			</div>
 
 			{/* Contact */}
 			<section className="bg-gray-100 py-10">
-				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-					<img src="/smart-panel-contacto.png" alt="Smart Panel Contacto" />
+				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">					
+					<CldImage
+						className="mx-auto w-auto h-auto"
+						src="smart-panel-contacto_voipaj"
+						width="532"
+						alt={`Smart Panel Contacto`}
+						height="626"
+						crop={{
+							type: "fit",
+							source: true,
+						}}
+				/>
 					<div>
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">Contáctanos</h2>

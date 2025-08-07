@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ShowcaseMuro from "../_components/panel-muro";
 
 export default function PanelMuro() {
 	return (
@@ -45,11 +46,9 @@ export default function PanelMuro() {
 							Cotiza Ahora
 						</Link>
 					</div>
-					<img
-						src="/smart-panel-panel-muro.png"
-						alt="3D render of insulated MURO SP panel layers"
-						className=""
-					/>
+					<div>
+						<ShowcaseMuro />
+					</div>
 				</div>
 			</section>
 			{/* Accessories */}

@@ -18,7 +18,7 @@ interface GalleryProps {
   images: GalleryImage[]
 }
 
-export function Gallery({ images }: GalleryProps) {
+export default function Gallery({ images }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const openLightbox = (index: number) => {

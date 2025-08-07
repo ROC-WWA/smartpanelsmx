@@ -1,5 +1,5 @@
 import CTA from "@/app/_components/cta";
-import { Gallery } from "@/app/_components/gallery";
+import Gallery from "@/app/_components/gallery";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
 import Link from "next/link";

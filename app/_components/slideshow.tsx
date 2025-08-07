@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useEffect } from "react"
 //import { Button } from "@/components/ui/button"
 
@@ -77,21 +78,16 @@ export default function Slideshow() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             Somos Fabricantes
             <br />
-            <span className="text-lg">
+            <span className="text-4xl">
               Construcción Inteligente con Panel Aislante
             </span>
           </h1>
-
-          {/* <Button
-            size="lg"
-            className="bg-white text-black hover:bg-gray-100 text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
-          >
-            Start Your Journey
-          </Button> */}
           <div
         className="py-2 font-semibold"
       >
-        <img src="/smart-panel-slider-boton3.png" alt="Smart Panel Logo" className="mx-auto mb-4 w-56" />
+        <Link href="/contacto">
+        <img src="/smart-panel-slider-boton3.png" alt="Smart Panel Logo" className="mx-auto mb-4 w-68" />
+        </Link>
       </div>
         </div>
       </div>

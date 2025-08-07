@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Showcase from "../_components/interactive-product-showcase";
 
 export default function PanelTecho() {
 	return (
@@ -26,7 +27,7 @@ export default function PanelTecho() {
 						</p>
 						<div className="space-x-2">
 							<Link
-								href="/smart-panel-panel-techo.png"
+								href="https://drive.google.com/file/d/1Y3lrnpnoYQbPGqFwMpaAtMUXXpHX_1CC/view"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
@@ -51,11 +52,9 @@ export default function PanelTecho() {
 							Cotiza Ahora
 						</Link>
 					</div>
-					<img
-						src="/smart-panel-panel-techo.png"
-						alt="3D render of insulated MURO SP panel layers"
-						className=""
-					/>
+					<div>
+						<Showcase />
+					</div>
 				</div>
 			</section>
 			{/* Accessories */}
