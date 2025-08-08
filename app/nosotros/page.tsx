@@ -167,7 +167,7 @@ Smart Panel México es una empresa 100% mexicana con experiencia en obras a nive
     className="relative py-24 bg-cover bg-center text-white"
     style={{
       backgroundImage:
-        'url("/background.jpg")'
+        'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/background_bwllu0.jpg")'
     }}
   >
     <div className="absolute inset-0" />

@@ -26,7 +26,7 @@ const tooltips: TooltipData[] = [
     {
     id: "machimbre",
     x: 42,
-    y: 58,
+    y: 60,
     title: "Machimbre Sig-lock",
     icon: <Zap className="w-4 h-4" />,
   },
@@ -34,7 +34,7 @@ const tooltips: TooltipData[] = [
   {
     id: "nucleo",
     x: 65,
-    y: 60,
+    y: 67,
     title: "Núcleo (EPS)",
     icon: <HardDrive className="w-4 h-4" />,
   },
@@ -67,6 +67,7 @@ export default function ShowcaseMuro() {
 							source: true,
 						}}
 				/>
+        
 
           {/* Tooltip Dots */}
           {tooltips.map((tooltip) => (
@@ -117,7 +118,7 @@ export default function ShowcaseMuro() {
 
         {/* Instructions */}
         <div className="mt-6 text-center">
-          <p className="text-sm text-muted-foreground">Descubre las características clave del Panel Techo SP</p>
+          <p className="text-sm text-muted-foreground">Descubre las características clave del Panel MURO SP</p>
         </div>
     </>
   )

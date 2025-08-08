@@ -4,22 +4,9 @@ import "./globals.css";
 import Head from "next/head";
 import Nav from "./_components/nav";
 import Script from "next/script";
-import Link from "next/link";
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from "@heroicons/react/20/solid";
-import SocialNetworks from "./_components/social";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { CldImage } from "next-cloudinary";
 import Footer from "./_components/footer";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
 	title: "Panel Prefabricados para Naves Industriales | Smart Panel",

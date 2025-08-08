@@ -5,7 +5,7 @@ const CTA = () => {
 		<section
 			className="relative py-24 bg-cover bg-center text-white"
 			style={{
-				backgroundImage: 'url("/smart-panel-panel-techo-banner.webp")',
+				backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513835/smart-panel-panel-techo-banner_zwixhl.webp")',
 			}}
 		>
 			<div className="absolute inset-0" 

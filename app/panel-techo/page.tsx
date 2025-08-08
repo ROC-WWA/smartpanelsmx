@@ -1,5 +1,7 @@
+'use client'
 import Link from "next/link";
 import Showcase from "../_components/interactive-product-showcase";
+import { CldImage } from "next-cloudinary";
 
 export default function PanelTecho() {
 	return (
@@ -73,10 +75,16 @@ export default function PanelTecho() {
 					<div className="grid md:grid-cols-3 gap-10 text-center mb-10">
 						{/* Canal U */}
 						<div className="p-6 rounded-md">
-							<img
-								src="/smart-panel-accesorio-tapagotero.png"
-								alt="Canal U accessory used for concrete fixation and finishing"
-								className="mx-auto mb-4"
+							<CldImage
+								className="mx-auto mb-4 bg-neutral-100 rounded-full p-4"
+								src="smart-panel-accesorio-tapagotero_c2cajx"
+								width="800"
+								alt="Smart Panel Tapagotero"
+								height="800"
+								crop={{
+									type: "fit",
+									source: true,
+								}}
 							/>
 							<h4 className="font-bold text-lg mb-2">TAPAGOTERO</h4>
 							<p className="text-gray-600 text-sm">
@@ -86,10 +94,16 @@ export default function PanelTecho() {
 						</div>
 						{/* Ángulo Interior */}
 						<div className="p-6 rounded-md">
-							<img
-								src="/smart-panel-accesorio-botaguas.png"
-								alt="Interior angle accessory for interior wall joints"
-								className="mx-auto mb-4"
+							<CldImage
+								className="mx-auto mb-4 bg-neutral-100 rounded-full p-4"
+								src="smart-panel-accesorio-botaguas_lirkxa"
+								width="800"
+								alt="Smart Panel Botaguas"
+								height="800"
+								crop={{
+									type: "fit",
+									source: true,
+								}}
 							/>
 							<h4 className="font-bold text-lg mb-2">BOTAGUAS</h4>
 							<p className="text-gray-600 text-sm">
@@ -99,10 +113,16 @@ export default function PanelTecho() {
 						</div>
 						{/* Ángulo Exterior */}
 						<div className="p-6 rounded-md">
-							<img
-								src="/smart-panel-accesorio-caballete.png"
-								alt="Exterior angle accessory for structural rigidity"
-								className="mx-auto mb-4"
+							<CldImage
+								className="mx-auto mb-4 bg-neutral-100 rounded-full p-4"
+								src="smart-panel-accesorio-caballete_esfoo5"
+								width="800"
+								alt="Smart Panel Caballette"
+								height="800"
+								crop={{
+									type: "fit",
+									source: true,
+								}}
 							/>
 							<h4 className="font-bold text-lg mb-2">CABALLETE</h4>
 							<p className="text-gray-600 text-sm">

@@ -189,7 +189,7 @@ export default function Home() {
 			<section
 				className="bg-gray-900 text-white "
 				style={{
-					backgroundImage: "url('/appointment3-bg.png')",
+					backgroundImage: "url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/appointment3-bg_wnfw66.png')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}
@@ -232,7 +232,7 @@ export default function Home() {
 			<section
 				className="py-20 bg-neutral-100"
 				style={{
-					backgroundImage: "url('/footer-bg8.png')",
+					backgroundImage: "url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/footer-bg8_hacpsn.png')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}

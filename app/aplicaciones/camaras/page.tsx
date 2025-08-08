@@ -72,7 +72,7 @@ export default function NavesIndustriales() {
 				className="relative bg-cover bg-center text-white py-20"
 				style={{
 					backgroundImage:
-						'url("/background.jpg")',
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/background_bwllu0.jpg")',
 				}}
 			>
 				<div className="absolute inset-0" />

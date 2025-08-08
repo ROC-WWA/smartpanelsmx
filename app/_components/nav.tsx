@@ -29,18 +29,19 @@ import {
 import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import SocialNetworks from "./social";
+import { CldImage } from "next-cloudinary";
 
 const products = [
 	{
 		name: "Panel MURO",
 		description: "Panel de muro prefabricado",
-		href: "panel-muro",
+		href: "/panel-muro",
 		icon: ChartPieIcon,
 	},
 	{
 		name: "Panel TECHO",
 		description: "Panel de techo prefabricado",
-		href: "panel-techo",
+		href: "/panel-techo",
 		icon: CursorArrowRaysIcon,
 	},
 ];
@@ -87,7 +88,13 @@ export default function Nav() {
 					<div className="flex lg:flex-1">
 						<Link href="/" className="-m-1.5 p-1.5">
 							<span className="sr-only">SmartPanel</span>
-							<img alt="" src="/smart-panel-logo.jpg" className="w-48" />
+							<CldImage
+								alt="Smart Panel Logo"
+								src="smart-panel-logo_ukokze"
+								width={200}
+								height={50}
+								className="h-16 w-auto"
+							/>
 						</Link>
 					</div>
 					<div className="flex lg:hidden">
