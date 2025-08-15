@@ -6,6 +6,7 @@ import Nav from "./_components/nav";
 import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "./_components/footer";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 export const metadata: Metadata = {
@@ -97,7 +98,7 @@ export default function RootLayout({
 				{children}
 				{/* Footer */}
 				<Script src="//code.jivosite.com/widget/4mwghIbKQO" async />
-
+				<GoogleAnalytics gaId="G-M10QM7MYG5" />
 				<Footer />
 			</body>
 		</html>

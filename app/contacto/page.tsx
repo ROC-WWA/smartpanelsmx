@@ -14,35 +14,26 @@ export default function Contacto() {
 	const [message, setMessage] = useState("");
 	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		fetch("/api/contact", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				name: name,
-				email: email,
-				phone: phone,
-				subject: subject,
-				message: message,
-			}),
-		})
-			.then((response) => {
-				if (response.ok) {
-					alert("Mensaje enviado correctamente");
-					e.currentTarget.reset();
-					setEmail("");
-					setPhone("");
-					setSubject("");
-					setMessage("");
-				} else {
-					alert("Error al enviar el mensaje");
-				}
-			})
-			.catch((error) => {
-				console.error("Error al enviar el mensaje:", error);
-				alert("Error al enviar el mensaje");
-			});
+		
+		const whatsappNumber = "5215610197622"; // Replace with actual WhatsApp number
+		const whatsappMessage = `Hola, me gustaría contactar con ustedes.
+
+*Nombre:* ${name}
+*Email:* ${email}
+*Teléfono:* ${phone}
+*Asunto:* ${subject}
+*Mensaje:* ${message}`;
+
+		const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+		
+		window.open(whatsappUrl, '_blank');
+		
+		// Reset form
+		setName("");
+		setEmail("");
+		setPhone("");
+		setSubject("");
+		setMessage("");
 	};
 	return (
 		<>
