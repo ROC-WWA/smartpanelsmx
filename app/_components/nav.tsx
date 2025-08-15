@@ -77,7 +77,7 @@ export default function Nav() {
             <span>atencionaclientes1@smartpanel.mx</span>
 						</Link>
           </div>
-					<div className="">
+					<div className="hidden lg:block">
 						<SocialNetworks className="text-white" />
 					</div>
 				</div>

@@ -78,7 +78,7 @@ export default function Slideshow() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
             Somos Fabricantes
             <br />
-            <span className="text-4xl">
+            <span className="lg:text-4xl text-lg">
               Construcción Inteligente con Panel Aislante
             </span>
           </h1>
