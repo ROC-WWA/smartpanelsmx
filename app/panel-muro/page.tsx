@@ -7,11 +7,11 @@ export default function PanelMuro() {
 	return (
 		<>
 			{/* Title Bar */}
-			<section className="bg-green-500 text-white py-10 text-center">
+			<section className="bg-green-500 text-white py-10 text-center" >
 				<h1 className="text-3xl font-bold">Panel MURO SP / PLAFÓN</h1>
 			</section>
 			{/* Characteristics */}
-			<section className="py-16 bg-white">
+			<section className="py-16 bg-white" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 					<div>
 						<h2 className="text-2xl font-bold mb-4">Características</h2>
@@ -53,8 +53,9 @@ export default function PanelMuro() {
 					</div>
 				</div>
 			</section>
+			
 			{/* Accessories */}
-			<section className="bg-gray-50 py-16">
+			<section className="bg-gray-50 py-16" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
 				<div className="max-w-6xl mx-auto px-6 text-center">
 					<h2 className="text-3xl font-bold mb-6">Accesorios</h2>
 					<p className="text-gray-600 max-w-3xl mx-auto mb-10">

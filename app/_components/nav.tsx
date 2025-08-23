@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	Dialog,
 	DialogPanel,
@@ -30,6 +30,7 @@ import { EnvelopeIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import SocialNetworks from "./social";
 import { CldImage } from "next-cloudinary";
+import { usePathname } from "next/navigation";
 
 const products = [
 	{
@@ -60,6 +61,11 @@ const applications = [
 
 export default function Nav() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const pathname = usePathname();
+
+	useEffect(() => {
+		setMobileMenuOpen(false);
+	}, [pathname]);
 
 	return (
 		<>
@@ -143,6 +149,7 @@ export default function Nav() {
 												<Link
 													href={item.href}
 													className="block font-semibold text-gray-900"
+													onClick={() => setMobileMenuOpen(false)}
 												>
 													{item.name}
 													<span className="absolute inset-0" />

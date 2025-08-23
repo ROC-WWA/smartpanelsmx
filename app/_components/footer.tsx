@@ -48,7 +48,7 @@ export default function Footer() {
 						<li className="py-2">
 							<Link
 								className="hover:text-green-500"
-								href="/docs/Aviso-de-Privacidad-Smart-Panel.pdf"
+								href="/docs/aviso-de-privacidad.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
 							>

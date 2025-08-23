@@ -1,5 +1,6 @@
 import Gallery from "../_components/gallery"
 import Title from "../_components/title"
+import ImageGallery from "./ImageGallery"
 
 const images = [
   {
@@ -68,6 +69,7 @@ const GalleryPage = () => {
       <Title>Galería</Title>
       <div className="max-w-6xl mx-auto p-6">
         <Gallery images={images} />
+        <ImageGallery />
       </div>
     </div>
   )

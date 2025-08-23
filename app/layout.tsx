@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 import Nav from "./_components/nav";
@@ -55,13 +55,17 @@ export const metadata: Metadata = {
 	},
 };
 
+const quicksand = Quicksand({
+  subsets: ['latin'],
+})
+
 export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" className={quicksand.className}>
 			<GoogleTagManager gtmId="GTM-54GRLXR" />
 			<Head>
 				<title>Title</title>

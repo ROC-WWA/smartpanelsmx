@@ -1,6 +1,6 @@
 'use client';
 import Slideshow from "./_components/slideshow";
-import { Check, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Check, Mail, Phone } from "lucide-react";
 import Sector from "./_components/sector";
 import Feature from "./_components/features";
 import Subtitle from "./_components/subtitle";
@@ -12,6 +12,9 @@ import { MapPinIcon } from "@heroicons/react/20/solid";
 import Link from "next/link";
 import SocialNetworks from "./_components/social";
 import { CldImage } from "next-cloudinary";
+import { Button } from "./_components/button";
+import ImageAccordion, { items } from "./_components/accordion-image";
+import { ImageGrid } from "./_components/image-grid";
 
 const sectors = [
 	{
@@ -250,7 +253,7 @@ export default function Home() {
 					</p>
 				</div>
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
-					<div className="text-center">
+					<div className="group space-y-3">
 						<CldImage
 						className="mx-auto mb-4"
 						src="smart-panel-panel-muro_k40rdl" 
@@ -262,16 +265,40 @@ export default function Home() {
 							source: true,
 						}}
 					/>
-						<h3 className="font-bold text-xl mb-2 text-left">
+					<div className=" group-hover:bg-neutral-800 px-4">
+
+					<div className="flex border-t-2 border-green-500">
+						<div className="service-default-icon">
+							<CldImage
+							className="group-hover:rotate-y-180 transition-transform duration-500"
+						src="icon-8_p051pl"
+						width="30"
+						height="30"
+						alt="Smart Panel Icon"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+					/>
+						</div>
+					</div>
+						<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
 							Panel MURO SP / PLAFÓN
 						</h3>
-						<p className="text-gray-600 text-left">
+						<p className="text-gray-600 text-left group-hover:text-white py-4">
 							Panel prefabricado tipo sándwich. Disponibles en varias opciones
 							de espesor, ajustándose al nivel de aislamiento térmico y uso
 							específico del proyecto.
 						</p>
+						<div className="py-4 flex">
+							<div className="relative">
+								<Link className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2" href="/panel-muro">Ver más <ArrowUpRight className="size-4"/></Link>
+								<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+							</div>
+						</div>
 					</div>
-					<div className="text-center">
+					</div>
+					<div className="group space-y-3">
 						<CldImage
 						className="mx-auto mb-4"
 						src="smart-panel-panel-techo_ypjoat" 
@@ -283,13 +310,40 @@ export default function Home() {
 							source: true,
 						}}
 					/>
-						<h3 className="font-bold text-xl mb-2 text-left">Panel TECHO SP</h3>
-						<p className="text-gray-600 text-left">
+					<div className=" group-hover:bg-neutral-800 px-4">
+
+					<div className="flex border-t-2 border-green-500">
+						<div className="service-default-icon">
+							<CldImage
+							className="group-hover:rotate-y-180 transition-transform duration-500"
+						src="icon-27_l4fiao"
+						width="30"
+						height="30"
+						alt="Smart Panel Icon"
+						crop={{
+							type: "auto",
+							source: true,
+						}}
+					/>
+						</div>
+					</div>
+						<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
+							Panel TECHO SP
+						</h3>
+						<p className="text-gray-600 text-left group-hover:text-white py-4">
 							Panel prefabricado tipo sándwich. Disponibles en varias opciones
 							de espesor, ajustándose al nivel de aislamiento térmico y uso
 							específico del proyecto.
 						</p>
+						<div className="py-4 flex">
+							<div className="relative">
+								<Link className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2" href="/panel-techo">Ver más <ArrowUpRight className="size-4"/></Link>
+								<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+							</div>
+						</div>
 					</div>
+					</div>
+
 				</div>
 			</section>
 			{/* Sectors Section */}
@@ -308,15 +362,7 @@ export default function Home() {
 					</p>
 				</div>
 				<div className="max-w-6xl mx-auto mt-10 space-y-8">
-					{sectors.map((sector, index) => (
-						<Sector
-							key={index}
-							index={index + 1}
-							title={sector.title}
-							description={sector.description}
-							image={sector.image}
-						/>
-					))}
+					<ImageGrid />
 				</div>
 			</section>
 
@@ -411,6 +457,11 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			<section className="max-w-6xl mx-auto px-6 py-20 space-y-10">
+				<ImageAccordion items={items.slice(0, 4)} defaultActiveId={1}/>
+				<ImageAccordion items={items.slice(4, 8)} defaultActiveId={8}/>
+			</section>
 			{/* About Us */}
 			<section className=" bg-gray-950 text-white">
 				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
@@ -504,14 +555,14 @@ export default function Home() {
 								<h4 className="text-green-500">Atención a clientes:</h4>
 							</div>
 							<div>
-								<Link href="tel:+521234567890">
+								<Link href="tel:+521234567890" className="hover:text-green-500">
 									{" "}
 									<Phone className="inline mr-2 text-green-500" /> +52 123 456
 									7890
 								</Link>
 							</div>
 							<div>
-								<Link href="mailto:atencionaclientes1@smartpanel.mx">
+								<Link href="mailto:atencionaclientes1@smartpanel.mx" className="hover:text-green-500">
 									{" "}
 									<Mail className="inline mr-2 text-green-500" />{" "}
 									atencionaclientes1@smartpanel.mx
@@ -528,7 +579,7 @@ export default function Home() {
 							<div>
 								<Link
 									href="https://maps.app.goo.gl/qzN8NWH2MQxMEBAz9"
-									className="mb-4"
+									className="mb-4 hover:text-green-500"
 								>
 									<MapPinIcon className="inline mr-2 text-green-500 size-4" />{" "}
 									Fracción de la Parcela 3 No. 60, int. Z#2, Praderas de los
@@ -542,7 +593,7 @@ export default function Home() {
 								<h4 className="text-green-500">Síguenos en redes sociales:</h4>
 							</div>
 							<div>
-								<SocialNetworks className="fill-green-500" />
+								<SocialNetworks className="fill-green-500 " />
 							</div>
 						</div>
 

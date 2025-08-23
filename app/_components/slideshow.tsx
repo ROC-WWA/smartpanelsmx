@@ -1,5 +1,6 @@
 "use client"
 
+import { CldImage } from "next-cloudinary"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 //import { Button } from "@/components/ui/button"
@@ -69,26 +70,26 @@ export default function Slideshow() {
       ))}
 
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/50" />
 
       {/* Content Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <img src="/LOGO-COLOR-SMART-PANEL-SLD.png" alt="Smart Panel Logo" className="mx-auto mb-4 w-56 hidden md:block" />
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+          <CldImage src="LOGO-COLOR-SMART-PANEL-SLD_dlklfw" alt="Smart Panel Logo" width={224} height={100} className="mx-auto mb-4 hidden md:block" />
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 sm:mb-8 md:leading-14 leading-8">
             Somos Fabricantes
             <br />
-            <span className="lg:text-4xl text-lg">
+            <span className="lg:text-2xl text-lg font-medium">
               Construcción Inteligente con Panel Aislante
             </span>
           </h1>
           <div
         className="py-2 font-semibold"
-      >
+            >
         <Link href="/contacto">
-        <img src="/smart-panel-slider-boton3.png" alt="Smart Panel Logo" className="mx-auto mb-4 w-68" />
+        <CldImage src="whatsapp-button_xpbvdh" alt="Smart Panel Logo" width={272} height={100} className="mx-auto mb-4" />
         </Link>
-      </div>
+            </div>
         </div>
       </div>
     </div>

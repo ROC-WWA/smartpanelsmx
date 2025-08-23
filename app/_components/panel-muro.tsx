@@ -75,7 +75,7 @@ export default function ShowcaseMuro() {
               {/* Dot */}
               <button
                 className={`absolute w-6 h-6 rounded-full border-2 border-white shadow-lg transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                  isTooltipVisible(tooltip.id) ? "bg-green-500 animate-pulse" : "bg-green-400 hover:bg-green-500"
+                  isTooltipVisible(tooltip.id) ? "bg-green-500 animate-pulse" : "bg-green-500 hover:bg-green-500"
                 }`}
                 style={{
                   left: `${tooltip.x}%`,
