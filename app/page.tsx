@@ -224,7 +224,7 @@ export default function Home() {
 						</p>
 						<Link
 							href="#"
-							className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-md font-semibold text-white"
+							className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold text-white"
 						>
 							Contáctanos
 						</Link>
@@ -496,7 +496,7 @@ export default function Home() {
 						<div className="mt-6">
 							<Link
 								href="/nosotros"
-								className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-md font-semibold text-white my-4"
+								className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold text-white my-4"
 							>
 								Ver más
 							</Link>
@@ -600,7 +600,7 @@ export default function Home() {
 						<div className="my-4">
 							<Link
 								href="/contacto"
-								className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-md font-semibold text-white"
+								className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold text-white"
 							>
 								Enviar mensaje
 							</Link>

@@ -1,17 +1,26 @@
-'use client'
+"use client";
 import Link from "next/link";
 import Showcase from "../_components/interactive-product-showcase";
 import { CldImage } from "next-cloudinary";
+import { Palette, Ruler } from "lucide-react";
 
 export default function PanelTecho() {
 	return (
 		<>
 			{/* Title Bar */}
-			<section className="bg-green-500 text-white py-10 text-center" >
+			<section className="bg-green-500 text-white py-10 text-center">
 				<h1 className="text-3xl font-bold">Panel TECHO SP</h1>
 			</section>
 			{/* Characteristics */}
-			<section className="py-16 bg-white" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<section
+				className="py-16 bg-white"
+				style={{
+					backgroundImage:
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")',
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+				}}
+			>
 				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 					<div>
 						<h2 className="text-2xl font-bold mb-4">Características</h2>
@@ -29,30 +38,42 @@ export default function PanelTecho() {
 						</p>
 						<div className="space-x-2">
 							<Link
-								href="https://drive.google.com/file/d/1Y3lrnpnoYQbPGqFwMpaAtMUXXpHX_1CC/view"
+								href="/docs/catalogo-de-accesorios-2025.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
+								className="inline-block bg-neutral-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
 							>
 								Catálogo
 							</Link>
 							<Link
-								href="https://drive.google.com/file/d/1BH4XBntndkgkPScUbG7HOQFtS3BHt6Bg/view?usp=drive_link"
+								href="/docs/ficha-tecnica-techo-sp.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
+								className="inline-block bg-neutral-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
 							>
 								Ficha Técnica
 							</Link>
 						</div>
-						<p className="text-gray-600 mb-2">🎨 Colores disponibles: Blanco</p>
-						<p className="text-gray-600 mb-4">📐 Espesores: de 1.5” a 10”</p>
-						<Link
-							href="#"
-							className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
-						>
-							Cotiza Ahora
-						</Link>
+						<div>
+							<div className="text-gray-600 mb-2 inline-flex items-center space-x-2">
+								<Palette className="size-5 text-green-500" />{" "}
+								<span>Colores disponibles: Blanco</span>
+							</div>
+						</div>
+						<div>
+							<div className="text-gray-600 mb-2 inline-flex items-center space-x-2">
+								<Ruler className="size-5 text-green-500" />{" "}
+								<span>Espesores: de 1.5” a 10”</span>
+							</div>
+						</div>
+						<div>
+							<Link
+								href="/contacto"
+								className="inline-block bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+							>
+								Cotiza Ahora
+							</Link>
+						</div>
 					</div>
 					<div>
 						<Showcase />
@@ -60,7 +81,15 @@ export default function PanelTecho() {
 				</div>
 			</section>
 			{/* Accessories */}
-			<section className="bg-gray-50 py-16" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<section
+				className="bg-gray-50 py-16"
+				style={{
+					backgroundImage:
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")',
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+				}}
+			>
 				<div className="max-w-6xl mx-auto px-6 text-center">
 					<h2 className="text-3xl font-bold mb-6">Accesorios</h2>
 					<p className="text-gray-600 max-w-3xl mx-auto mb-10">
@@ -133,7 +162,7 @@ export default function PanelTecho() {
 					</div>
 					<Link
 						href="tel:5610197622"
-						className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold mt-4 inline-block"
+						className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold mt-4 inline-block"
 					>
 						<i className="fas fa-phone-alt mr-2" /> Llama ahora: 56 1019 7622
 					</Link>
@@ -149,18 +178,20 @@ export default function PanelTecho() {
 				<div className="absolute inset-0 bg-black/80 text-sm lg:text-4xl" />
 				<div className="relative z-10 max-w-4xl mx-auto px-6 text-center ">
 					<h2 className="text-3xl font-bold mb-4">
-Cotiza tu Panel Techo con Expertos
+						Cotiza tu Panel Techo con Expertos
 					</h2>
 					<p className="mb-6">
-En Smart Panel México trabajamos con proyectos en todo el país. Ofrecemos paneles sandwich para techos listos para instalar, con asesoría técnica, entrega rápida y calidad garantizada.
-
+						En Smart Panel México trabajamos con proyectos en todo el país.
+						Ofrecemos paneles sandwich para techos listos para instalar, con
+						asesoría técnica, entrega rápida y calidad garantizada.
 					</p>
-          <p className="mb-6">
-            Solicita tu cotización ahora y asegura la mejor solución térmica y estructural para tu construcción.
-          </p>
+					<p className="mb-6">
+						Solicita tu cotización ahora y asegura la mejor solución térmica y
+						estructural para tu construcción.
+					</p>
 					<Link
 						href="/contacto"
-						className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
+						className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
 					>
 						Contáctanos
 					</Link>

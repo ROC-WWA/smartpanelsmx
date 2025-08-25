@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import ShowcaseMuro from "../_components/panel-muro";
 import { CldImage } from "next-cloudinary";
@@ -8,55 +8,87 @@ export default function PanelMuro() {
 	return (
 		<>
 			{/* Title Bar */}
-			<section className="bg-green-500 text-white py-10 text-center" >
+			<section className="bg-green-500 text-white py-10 text-center">
 				<h1 className="text-3xl font-bold">Panel MURO SP / PLAFÓN</h1>
 			</section>
 			{/* Characteristics */}
-			<section className="py-16 bg-white" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<section
+				className="py-16 bg-white"
+				style={{
+					backgroundImage:
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")',
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+				}}
+			>
 				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 					<div>
 						<h2 className="text-2xl font-bold mb-4">Características</h2>
 						<p className="text-gray-600 mb-4">
-							Panel prefabricado tipo sándwich, diseñado como sistema constructivo modular a base de 2 láminas de acero galvanizado calibre 26, pre pintadas y núcleo de poliestireno expandido (EPS).
+							Panel prefabricado tipo sándwich, diseñado como sistema
+							constructivo modular a base de 2 láminas de acero galvanizado
+							calibre 26, pre pintadas y núcleo de poliestireno expandido (EPS).
 						</p>
 						<p className="text-gray-600 mb-4">
-							Su configuración permite una instalación ágil, segura y con excelente desempeño estructural, gracias a su ensamble tipo hembra-macho Sig-Lock.
+							Su configuración permite una instalación ágil, segura y con
+							excelente desempeño estructural, gracias a su ensamble tipo
+							hembra-macho Sig-Lock.
 						</p>
 						<div className="space-x-2">
-              <Link 
-              href="/docs/catalogo-de-accesorios-2025.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
-              >
-                Catálogo
-              </Link>
-              <Link
-                href="/docs/ficha-tecnica-muro-sp.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
-              >
-                Ficha Técnica
-              </Link>
-            </div>
-						<div className="text-gray-600 mb-2 inline-flex items-center space-x-2"><Palette className="size-5 text-green-500"/> <span>Colores disponibles: Blanco</span></div>
-						<div className="text-gray-600 mb-2 inline-flex items-center space-x-2"><Ruler className="size-5 text-green-500"/> <span>Espesores: de 1.5” a 10”</span></div>
-						<Link
-							href="/contacto"
-							className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
-						>
-							Cotiza Ahora
-						</Link>
+							<Link
+								href="/docs/catalogo-de-accesorios-2025.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-block bg-neutral-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+							>
+								Catálogo
+							</Link>
+							<Link
+								href="/docs/ficha-tecnica-muro-sp.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="inline-block bg-neutral-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+							>
+								Ficha Técnica
+							</Link>
+						</div>
+						<div>
+							<div className="text-gray-600 mb-2 inline-flex items-center space-x-2">
+								<Palette className="size-5 text-green-500" />{" "}
+								<span>Colores disponibles: Blanco</span>
+							</div>
+						</div>
+						<div>
+							<div className="text-gray-600 mb-2 inline-flex items-center space-x-2">
+								<Ruler className="size-5 text-green-500" />{" "}
+								<span>Espesores: de 1.5” a 10”</span>
+							</div>
+						</div>
+						<div>
+							<Link
+								href="/contacto"
+								className="inline-block bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+							>
+								Cotiza Ahora
+							</Link>
+						</div>
 					</div>
 					<div>
 						<ShowcaseMuro />
 					</div>
 				</div>
 			</section>
-			
+
 			{/* Accessories */}
-			<section className="bg-gray-50 py-16" style={{ backgroundImage: 'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<section
+				className="bg-gray-50 py-16"
+				style={{
+					backgroundImage:
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513760/hero-15-bg-mask_mxdzzx.png")',
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+				}}
+			>
 				<div className="max-w-6xl mx-auto px-6 text-center">
 					<h2 className="text-3xl font-bold mb-6">Accesorios</h2>
 					<p className="text-gray-600 max-w-3xl mx-auto mb-10">
@@ -102,7 +134,8 @@ export default function PanelMuro() {
 							/>
 							<h4 className="font-bold text-lg mb-2">ÁNGULO INTERIOR</h4>
 							<p className="text-gray-600 text-sm">
-								Acabado estético en las uniones del muro sp (esquinas) en el interior de la construcción.
+								Acabado estético en las uniones del muro sp (esquinas) en el
+								interior de la construcción.
 							</p>
 						</div>
 						{/* Ángulo Exterior */}
@@ -120,13 +153,14 @@ export default function PanelMuro() {
 							/>
 							<h4 className="font-bold text-lg mb-2">ÁNGULO EXTERIOR</h4>
 							<p className="text-gray-600 text-sm">
-								Acabado estético en las uniones del muro sp en el exterior, dando mayor rigidez a la construcción.
+								Acabado estético en las uniones del muro sp en el exterior,
+								dando mayor rigidez a la construcción.
 							</p>
 						</div>
 					</div>
 					<Link
 						href="tel:5610197622"
-						className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold mt-4 inline-block"
+						className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold mt-4 inline-block"
 					>
 						<i className="fas fa-phone-alt mr-2" /> Llama ahora: 56 1019 7622
 					</Link>
@@ -135,10 +169,10 @@ export default function PanelMuro() {
 			{/* CTA Section */}
 			<section
 				className="relative py-24 bg-cover bg-center text-white"
-    style={{
-      backgroundImage:
-        'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/background_bwllu0.jpg")'
-    }}
+				style={{
+					backgroundImage:
+						'url("https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/background_bwllu0.jpg")',
+				}}
 			>
 				<div className="absolute inset-0" />
 				<div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -146,17 +180,19 @@ export default function PanelMuro() {
 						¿Necesitas una cotización o asesoría técnica?
 					</h2>
 					<p className="mb-6">
-						Contáctanos hoy y recibe atención personalizada de nuestros expertos. En Smart Panel, te ayudamos a elegir la mejor solución para tu proyecto, ya sea un panel para muro exterior, una caseta prefabricada o una nave completa.
+						Contáctanos hoy y recibe atención personalizada de nuestros
+						expertos. En Smart Panel, te ayudamos a elegir la mejor solución
+						para tu proyecto, ya sea un panel para muro exterior, una caseta
+						prefabricada o una nave completa.
 					</p>
 					<Link
 						href="/contacto"
-						className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
+						className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
 					>
 						Contáctanos
 					</Link>
 				</div>
 			</section>
-			
 		</>
 	);
 }

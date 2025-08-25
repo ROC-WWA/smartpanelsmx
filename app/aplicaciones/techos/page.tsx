@@ -86,7 +86,7 @@ export default function NavesIndustriales() {
 						</div>
 						<Link
 							href="/contacto"
-							className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold inline-flex items-center"
+							className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold inline-flex items-center"
 						>
 							<i className="fas fa-pen mr-2" /> Cotiza Ahora
 						</Link>
@@ -127,7 +127,7 @@ export default function NavesIndustriales() {
 							<div className="mt-8">
 								<Link
 									href="/contacto"
-									className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-md font-semibold inline-flex items-center"
+									className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold inline-flex items-center"
 								>
 									Contáctanos
 								</Link>

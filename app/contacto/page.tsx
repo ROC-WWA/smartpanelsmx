@@ -48,7 +48,7 @@ export default function Contacto() {
 							SMART PANEL
 						</h3>
 						<h2 className="text-2xl md:text-3xl font-bold mb-4">Contáctanos</h2>
-						<p className="mb-2 text-green-600 font-semibold">
+						<p className="mb-2 text-green-500 font-semibold">
 							Atención a clientes:
 						</p>
 						<div>
@@ -118,7 +118,7 @@ export default function Contacto() {
 							/>
 							<button
 								type="submit"
-								className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
+								className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
 							>
 								ENVIAR <i className="fas fa-arrow-right ml-2" />
 							</button>
