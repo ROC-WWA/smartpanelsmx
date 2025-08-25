@@ -32,6 +32,9 @@ import SocialNetworks from "./social";
 import { CldImage } from "next-cloudinary";
 import { usePathname } from "next/navigation";
 
+
+
+
 const products = [
 	{
 		name: "Panel MURO",
@@ -58,6 +61,36 @@ const applications = [
 	{ name: "Hospitales", href: "/aplicaciones/hospitales", icon: PhoneIcon },
 ];
 
+
+const menu = [
+	{
+		name: "Home",
+		href: "/",
+		children: []
+	},
+	{
+		name: "Nosotros",
+		href: "/nosotros",
+	},
+	{
+		name: "Productos",
+		href: "#",
+		children: products
+	},
+		{
+		name: "Aplicaciones",
+		href: "#",
+		children: applications
+	},
+	{
+		name: "Galería",
+		href: "/galeria",
+	},
+	{
+		name: "Contacto",
+		href: "/contacto",
+	},
+];
 
 export default function Nav() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

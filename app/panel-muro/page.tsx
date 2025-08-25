@@ -2,6 +2,7 @@
 import Link from "next/link";
 import ShowcaseMuro from "../_components/panel-muro";
 import { CldImage } from "next-cloudinary";
+import { Palette, Ruler } from "lucide-react";
 
 export default function PanelMuro() {
 	return (
@@ -23,7 +24,7 @@ export default function PanelMuro() {
 						</p>
 						<div className="space-x-2">
               <Link 
-              href="https://drive.google.com/file/d/1Y3lrnpnoYQbPGqFwMpaAtMUXXpHX_1CC/view"
+              href="/docs/catalogo-de-accesorios-2025.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
@@ -31,7 +32,7 @@ export default function PanelMuro() {
                 Catálogo
               </Link>
               <Link
-                href="https://drive.google.com/file/d/1ofOzOAGGXrshVChkFOBpBcYZj9h0GSik/view"
+                href="/docs/ficha-tecnica-muro-sp.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-neutral-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"
@@ -39,8 +40,8 @@ export default function PanelMuro() {
                 Ficha Técnica
               </Link>
             </div>
-						<p className="text-gray-600 mb-2">🎨 Colores disponibles: Blanco</p>
-						<p className="text-gray-600 mb-4">📐 Espesores: de 1.5” a 10”</p>
+						<div className="text-gray-600 mb-2 inline-flex items-center space-x-2"><Palette className="size-5 text-green-500"/> <span>Colores disponibles: Blanco</span></div>
+						<div className="text-gray-600 mb-2 inline-flex items-center space-x-2"><Ruler className="size-5 text-green-500"/> <span>Espesores: de 1.5” a 10”</span></div>
 						<Link
 							href="/contacto"
 							className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-md font-semibold"

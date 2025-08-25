@@ -1,9 +1,7 @@
-// app/not-found.tsx
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { CldImage } from 'next-cloudinary'
+
 
 export default function NotFound() {
   return (

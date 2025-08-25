@@ -7,6 +7,7 @@ import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import Footer from "./_components/footer";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Navigation } from "./_components/navigation";
 
 
 export const metadata: Metadata = {
@@ -96,9 +97,10 @@ export default function RootLayout({
 				</noscript>
 			</Head>
 
-			<body
+			<body className="pt-32"
 			>
-				<Nav />
+				
+				<Navigation />
 				{children}
 				{/* Footer */}
 				<Script src="//code.jivosite.com/widget/4mwghIbKQO" async />
