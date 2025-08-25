@@ -146,7 +146,7 @@ export default function Home() {
 							Mejores Edificaciones para un Futuro Sustentable
 						</h2>
 						<p>Impulsando la Sostenibilidad, la Innovación y el Rendimiento</p>
-						<p className="text-gray-600 mb-4">
+						<p className="text-gray-800 mb-4">
 							En Smart Panel México, somos una empresa mexicana certificada
 							(ECMX-1369/19), dedicada a la fabricación de materiales
 							prefabricados con núcleo de poliestireno expandido (EPS),
