@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Slideshow from "./_components/slideshow";
 import { ArrowUpRight, Check, Mail, Phone } from "lucide-react";
 import Sector from "./_components/sector";
@@ -98,17 +98,17 @@ const reasonsToChooseUs = [
 	{
 		title: "Soluciones adaptables",
 		description: "Soluciones adaptables a todo tipo de proyectos",
-		image: "smart-panel-icon2_sxim6n",
+		image: "smart-panel-icon4_avnhd5",
 	},
 	{
 		title: "Entregas",
 		description: "Entregas a todo México",
-		image: "smart-panel-icon3_nz06t0",
+		image: "smart-panel-icon1_aemfrq",
 	},
 	{
 		title: "Instalación rápida",
 		description: "Instalación rápida y limpia sin obra húmeda",
-		image: "smart-panel-icon4_avnhd5",
+		image: "smart-panel-icon7_wbtvdo",
 	},
 	{
 		title: "Personalización",
@@ -118,7 +118,7 @@ const reasonsToChooseUs = [
 	{
 		title: "Energía Optimizada",
 		description: "Materiales de bajo consumo eléctrico para su producción",
-		image: "smart-panel-icon5_gwavtw",
+		image: "smart-panel-icon2_sxim6n",
 	},
 ];
 
@@ -131,7 +131,7 @@ export default function Home() {
 			<section className="py-20 bg-white">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
 					<CldImage
-						src="smart-panel-work_z7wlox" 
+						src="smart-panel-work_z7wlox"
 						width="500"
 						alt="Smart Panel Image"
 						height="500"
@@ -192,7 +192,8 @@ export default function Home() {
 			<section
 				className="bg-gray-900 text-white "
 				style={{
-					backgroundImage: "url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/appointment3-bg_wnfw66.png')",
+					backgroundImage:
+						"url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/appointment3-bg_wnfw66.png')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}
@@ -200,15 +201,15 @@ export default function Home() {
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 items-center justify-between px-6">
 					<div className="">
 						<CldImage
-						src="smart-panel-construccion_v2bhdy" 
-						width="500"
-						alt="Smart Panel Image"
-						height="500"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-					/>
+							src="smart-panel-construccion_v2bhdy"
+							width="500"
+							alt="Smart Panel Image"
+							height="500"
+							crop={{
+								type: "auto",
+								source: true,
+							}}
+						/>
 					</div>
 					<div className="ml-0 md:ml-10">
 						<Subtitle text="smart panel" />
@@ -235,7 +236,8 @@ export default function Home() {
 			<section
 				className="py-20 bg-neutral-100"
 				style={{
-					backgroundImage: "url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/footer-bg8_hacpsn.png')",
+					backgroundImage:
+						"url('https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513759/footer-bg8_hacpsn.png')",
 					backgroundSize: "cover",
 					backgroundPosition: "center",
 				}}
@@ -255,95 +257,102 @@ export default function Home() {
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
 					<div className="group space-y-3">
 						<CldImage
-						className="mx-auto mb-4"
-						src="smart-panel-panel-muro_k40rdl" 
-						width="340"
-						alt="Smart Panel Image"
-						height="340"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-					/>
-					<div className=" group-hover:bg-neutral-800 px-4">
-
-					<div className="flex border-t-2 border-green-500">
-						<div className="service-default-icon">
-							<CldImage
-							className="group-hover:rotate-y-180 transition-transform duration-500"
-						src="icon-8_p051pl"
-						width="30"
-						height="30"
-						alt="Smart Panel Icon"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-					/>
-						</div>
-					</div>
-						<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
-							Panel MURO SP / PLAFÓN
-						</h3>
-						<p className="text-gray-600 text-left group-hover:text-white py-4">
-							Panel prefabricado tipo sándwich. Disponibles en varias opciones
-							de espesor, ajustándose al nivel de aislamiento térmico y uso
-							específico del proyecto.
-						</p>
-						<div className="py-4 flex">
-							<div className="relative">
-								<Link className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2" href="/panel-muro">Ver más <ArrowUpRight className="size-4"/></Link>
-								<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+							className="mx-auto mb-4"
+							src="smart-panel-panel-muro_k40rdl"
+							width="340"
+							alt="Smart Panel Image"
+							height="340"
+							crop={{
+								type: "auto",
+								source: true,
+							}}
+						/>
+						<div className=" group-hover:bg-neutral-800 px-4">
+							<div className="flex border-t-2 border-green-500">
+								<div className="service-default-icon">
+									<CldImage
+										className="group-hover:rotate-y-180 transition-transform duration-500"
+										src="icon-8_p051pl"
+										width="30"
+										height="30"
+										alt="Smart Panel Icon"
+										crop={{
+											type: "auto",
+											source: true,
+										}}
+									/>
+								</div>
+							</div>
+							<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
+								Panel MURO SP / PLAFÓN
+							</h3>
+							<p className="text-gray-600 text-left group-hover:text-white py-4">
+								Panel prefabricado tipo sándwich. Disponibles en varias opciones
+								de espesor, ajustándose al nivel de aislamiento térmico y uso
+								específico del proyecto.
+							</p>
+							<div className="py-4 flex">
+								<div className="relative">
+									<Link
+										className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2"
+										href="/panel-muro"
+									>
+										Ver más <ArrowUpRight className="size-4" />
+									</Link>
+									<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+								</div>
 							</div>
 						</div>
-					</div>
 					</div>
 					<div className="group space-y-3">
 						<CldImage
-						className="mx-auto mb-4"
-						src="smart-panel-panel-techo_ypjoat" 
-						width="340"
-						alt="Smart Panel Image"
-						height="340"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-					/>
-					<div className=" group-hover:bg-neutral-800 px-4">
-
-					<div className="flex border-t-2 border-green-500">
-						<div className="service-default-icon">
-							<CldImage
-							className="group-hover:rotate-y-180 transition-transform duration-500"
-						src="icon-27_l4fiao"
-						width="30"
-						height="30"
-						alt="Smart Panel Icon"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-					/>
-						</div>
-					</div>
-						<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
-							Panel TECHO SP
-						</h3>
-						<p className="text-gray-600 text-left group-hover:text-white py-4">
-							Panel prefabricado tipo sándwich. Disponibles en varias opciones
-							de espesor, ajustándose al nivel de aislamiento térmico y uso
-							específico del proyecto.
-						</p>
-						<div className="py-4 flex">
-							<div className="relative">
-								<Link className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2" href="/panel-techo">Ver más <ArrowUpRight className="size-4"/></Link>
-								<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+							className="mx-auto mb-4"
+							src="smart-panel-panel-techo_ypjoat"
+							width="340"
+							alt="Smart Panel Image"
+							height="340"
+							crop={{
+								type: "auto",
+								source: true,
+							}}
+						/>
+						<div className=" group-hover:bg-neutral-800 px-4">
+							<div className="flex border-t-2 border-green-500">
+								<div className="service-default-icon">
+									<CldImage
+										className="group-hover:rotate-y-180 transition-transform duration-500"
+										src="icon-27_l4fiao"
+										width="30"
+										height="30"
+										alt="Smart Panel Icon"
+										crop={{
+											type: "auto",
+											source: true,
+										}}
+									/>
+								</div>
+							</div>
+							<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
+								Panel TECHO SP
+							</h3>
+							<p className="text-gray-600 text-left group-hover:text-white py-4">
+								Panel prefabricado tipo sándwich. Disponibles en varias opciones
+								de espesor, ajustándose al nivel de aislamiento térmico y uso
+								específico del proyecto.
+							</p>
+							<div className="py-4 flex">
+								<div className="relative">
+									<Link
+										className="relative font-semibold text-green-500 uppercase inline-flex items-center gap-2"
+										href="/panel-techo"
+									>
+										Ver más <ArrowUpRight className="size-4" />
+									</Link>
+									<span className="absolute left-0 bottom-0 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full" />
+								</div>
 							</div>
 						</div>
 					</div>
-					</div>
-
 				</div>
 			</section>
 			{/* Sectors Section */}
@@ -388,15 +397,15 @@ export default function Home() {
 							</p>
 							<CldImage
 								className="w-full mt-6"
-						src="smart-panel-ambienteplaneta_zno7uo"
-						width="543"
-						alt="Smart Panel Planet Decision"
-						height="340"
-						crop={{
-							type: "auto",
-							source: true,
-						}}
-				/>
+								src="smart-panel-ambienteplaneta_zno7uo"
+								width="543"
+								alt="Smart Panel Planet Decision"
+								height="340"
+								crop={{
+									type: "auto",
+									source: true,
+								}}
+							/>
 						</div>
 						<div className="space-y-3">
 							{features.map((feature, index) => (
@@ -418,8 +427,8 @@ export default function Home() {
 						<Subtitle text="Smart Panel" />
 					</div>
 					<h2 className="text-3xl font-bold mb-10">¿Por qué elegirnos?</h2>
-					<div className="flex-row flex">
-						<div className="w-1/3">
+					<div className="flex-row flex flex-wrap">
+						<div className="w-full md:w-1/3 order-2 md:order-1">
 							{reasonsToChooseUs.slice(0, 3).map((reason, index) => (
 								<Reason
 									key={index}
@@ -427,23 +436,25 @@ export default function Home() {
 									title={reason.title}
 									description={reason.description}
 									image={reason.image}
+									textContainerClassName="text-center order-2 md:order-1 md:text-left"
+									iconContainerClassName="w-full order-1 md:order-2 md:w-20"
 								/>
 							))}
 						</div>
-						<div className="w-1/3">
+						<div className="w-full md:w-1/3 order-1 md:order-2">
 							<CldImage
-									className="mx-auto"
-									src="smart-panel-nave2_co7g51"
-									width="400"
-									alt="Smart Panel Reasons"
-									height="400"
-									crop={{
-										type: "auto",
-										source: true,
-									}}
+								className="w-full px-4 md:px-0 mx-auto"
+								src="smart-panel-nave2_co7g51"
+								width="400"
+								alt="Smart Panel Reasons"
+								height="400"
+								crop={{
+									type: "auto",
+									source: true,
+								}}
 							/>
 						</div>
-						<div className="w-1/3">
+						<div className="w-full md:w-1/3 order-3 md:order-3">
 							{reasonsToChooseUs.slice(3, 6).map((reason, index) => (
 								<Reason
 									key={index}
@@ -451,16 +462,23 @@ export default function Home() {
 									title={reason.title}
 									description={reason.description}
 									image={reason.image}
+									textContainerClassName="text-center order-2 md:order-1 md:text-left"
+									iconContainerClassName="w-full order-1 md:order-2 md:w-20"
 								/>
 							))}
 						</div>
 					</div>
 				</div>
 			</section>
-
+			<div className="text-center mt-20">
+				<div className="flex justify-center">
+					<Subtitle text="smart panel" />
+				</div>
+				<h2 className="text-3xl font-bold">Aplicaciones</h2>
+			</div>
 			<section className="max-w-6xl mx-auto px-6 py-20 space-y-10">
-				<ImageAccordion items={items.slice(0, 4)} defaultActiveId={1}/>
-				<ImageAccordion items={items.slice(4, 8)} defaultActiveId={8}/>
+				<ImageAccordion items={items.slice(0, 4)} defaultActiveId={1} />
+				<ImageAccordion items={items.slice(4, 8)} defaultActiveId={8} />
 			</section>
 			{/* About Us */}
 			<section className=" bg-gray-950 text-white">
@@ -475,7 +493,7 @@ export default function Home() {
 							type: "fit",
 							source: true,
 						}}
-				/>
+					/>
 					<div className="py-20 md:col-span-1">
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">¿Quiénes Somos?</h2>
@@ -534,7 +552,7 @@ export default function Home() {
 
 			{/* Contact */}
 			<section className="bg-gray-100 py-10">
-				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">					
+				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
 					<CldImage
 						className="mx-auto w-auto h-auto"
 						src="smart-panel-contacto_voipaj"
@@ -545,7 +563,7 @@ export default function Home() {
 							type: "fit",
 							source: true,
 						}}
-				/>
+					/>
 					<div>
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">Contáctanos</h2>
@@ -562,7 +580,10 @@ export default function Home() {
 								</Link>
 							</div>
 							<div>
-								<Link href="mailto:atencionaclientes1@smartpanel.mx" className="hover:text-green-500">
+								<Link
+									href="mailto:atencionaclientes1@smartpanel.mx"
+									className="hover:text-green-500"
+								>
 									{" "}
 									<Mail className="inline mr-2 text-green-500" />{" "}
 									atencionaclientes1@smartpanel.mx
