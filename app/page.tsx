@@ -348,10 +348,10 @@ export default function Home() {
 					<div className="group space-y-3">
 						<CldImage
 							className="mx-auto mb-4"
-							src="smart-panel-panel-techo_ypjoat"
-							width="340"
+							src="smart-panel-techo-prodcuto_yekls8"
+							width="400"
 							alt="Smart Panel Image"
-							height="340"
+							height="310"
 							crop={{
 								type: "auto",
 								source: true,
