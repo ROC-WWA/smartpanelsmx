@@ -8,11 +8,6 @@ import { CheckIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
 import Script from "next/script";
 import ReCAPTCHA from "react-google-recaptcha";
 
-declare global {
-	interface Window {
-		grecaptcha?: any;
-	}
-}
 
 export default function Contacto() {
 	const [name, setName] = useState("");
@@ -81,9 +76,9 @@ export default function Contacto() {
 		}
 
 		// Reset reCAPTCHA and form after attempt
-		if (recaptchaWidgetId !== null && window.grecaptcha) {
-			window.grecaptcha.reset(recaptchaWidgetId);
-		}
+		// if (recaptchaWidgetId !== null && window.grecaptcha) {
+		// 	window.grecaptcha.reset(recaptchaWidgetId);
+		// }
 		setRecaptchaToken(null);
 
 		return;

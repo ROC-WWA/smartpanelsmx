@@ -50,10 +50,10 @@ export default function ImageGallery() {
 
   // Create 4 masonry columns
   const columns = 4
-  const columnedImages = Array.from({ length: columns }, () => [])
+  const columnedImages: { src: string; index: number }[][] = Array.from({ length: columns }, () => [])
 
   images.forEach((img, idx) => {
-    columnedImages[idx % columns].push({ ...img, index: idx })
+    return columnedImages[idx % columns].push({ ...img, index: idx })
   })
 
   return (
