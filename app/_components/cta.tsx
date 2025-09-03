@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ContactButton } from "./contact-button";
 
 const CTA = () => {
 	return (
@@ -9,7 +10,7 @@ const CTA = () => {
 			}}
 		>
 			<div className="absolute inset-0" 
-			style={{backgroundColor: "rgba(0, 0, 0, 0.5)"}}
+			style={{backgroundColor: "rgba(0, 0, 0, 0.7)"}}
 			/>
 			<div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
 				<h2 className="text-3xl font-bold mb-4">
@@ -18,12 +19,7 @@ const CTA = () => {
 				<p className="mb-6">
 					Contáctanos hoy y recibe atención personalizada de nuestros expertos. En Smart Panel, te ayudamos a elegir la mejor solución para tu proyecto, ya sea un panel para muro exterior, una caseta prefabricada o una nave completa.
 				</p>
-				<Link
-					href="/contacto"
-					className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
-				>
-					Contáctanos
-				</Link>
+				<ContactButton />
 			</div>
 		</section>
 	);

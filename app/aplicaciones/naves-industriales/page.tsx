@@ -1,5 +1,8 @@
+import CallUs from "@/app/_components/callus";
+import { ContactButton } from "@/app/_components/contact-button";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
+import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
 import Link from "next/link";
@@ -45,7 +48,7 @@ export default function NavesIndustriales() {
 	return (
 		<>
 			{/* Hero Section */}
-			<Title>{info.title}</Title>
+			<ImageHeader title={info.title} backgroundImage={"https://rocwork.space/smartpanels/wp-content/uploads/2025/06/smart-panel-banner-aplicaciones-nave-scaled.png"} />
 			{/* Description */}
 			<section className="bg-white py-16">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
@@ -92,14 +95,8 @@ export default function NavesIndustriales() {
 									</li>
 								))}
 							</ul>
-
-							<div className="mt-8">
-								<Link
-									href="/contacto"
-									className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold inline-flex items-center"
-								>
-									Contáctanos
-								</Link>
+							<div className="mt-6">
+								<ContactButton />
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
@@ -119,9 +116,9 @@ export default function NavesIndustriales() {
 						<p className="text-gray-700 text-lg mb-4">
 							{info.section.text}
 						</p>
-						<p className="text-green-500 font-semibold text-lg mb-4">
-							<i className="fas fa-phone-alt mr-2" /> +52 1 56 1019 7622
-						</p>
+						<div>
+							<CallUs />
+						</div>
 					</div>
 					<img
 						src={info.section.image}
@@ -132,7 +129,7 @@ export default function NavesIndustriales() {
 			</section>
 			{/* Image Gallery */}
 			<section className="py-16 bg-white max-w-6xl mx-auto px-6">
-				<Gallery images={info.gallery} />
+				<Gallery images={info.gallery} className="md:grid-cols-3 lg:grid-cols-3"/>
 			</section>
 			{/* CTA Bottom */}
 			<CTA />

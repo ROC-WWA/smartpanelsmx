@@ -15,6 +15,7 @@ import { CldImage } from "next-cloudinary";
 import { Button } from "./_components/button";
 import ImageAccordion, { items } from "./_components/accordion-image";
 import { ImageGrid } from "./_components/image-grid";
+import ClipMask from "./_components/clip-mask";
 
 const sectors = [
 	{
@@ -125,6 +126,47 @@ const reasonsToChooseUs = [
 export default function Home() {
 	return (
 		<>
+			<style>
+				{`
+			.clip{
+			    position: relative;
+			height: 100%;
+			z-index: 1;
+			overflow:hidden;
+			width: 100%;
+			}
+			.clip:after{
+					opacity: 0.2;
+					content: '';
+					position: absolute;
+					top:0;
+					left: calc(-53px - 40px);
+					width: calc(100% + 80px);
+					height: 100%;
+					-webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+					clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+					background: var(--theme-color);
+					z-index: -1;
+			}
+			.clip:before{
+							content: '';
+					position: absolute;
+					left: -53px;
+					height: 100%;
+					width: 100%;
+					-webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+					clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+					background: var(--theme-color);
+					z-index: -1;
+			}
+			.clip img{
+							height: 100%;
+					object-fit: cover;
+					-webkit-clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+					clip-path: polygon(0 0, 75% 0, 100% 100%, 25% 100%);
+			}
+			`}
+			</style>
 			{/* Hero Section */}
 			<Slideshow />
 			{/* Sustainable Future Section */}
@@ -143,7 +185,7 @@ export default function Home() {
 					<div>
 						<Subtitle text="smart panel" />
 						<h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-							Mejores Edificaciones para un Futuro Sustentable
+							Empresa Certificada: <br /> Construcción Sustentable con Paneles Aislantes
 						</h2>
 						<p>Impulsando la Sostenibilidad, la Innovación y el Rendimiento</p>
 						<p className="text-gray-800 mb-4">
@@ -247,11 +289,10 @@ export default function Home() {
 				</div>
 				<div className="text-center mb-12">
 					<h2 className="text-3xl font-bold text-gray-800">
-						Tecnología que se adapta a tu proyecto.
+						Nuestros Paneles Prefabricados
 					</h2>
-					<p>
-						Conoce nuestra línea de paneles prefabricados y accesorios que
-						optimizan tiempo y reducen costos
+					<p className="my-2 text-lg font-medium">
+						Conoce nuestra línea de paneles tipo sándwich SP. <br />Soluciones modulares para construcciones eficientes y duraderas.
 					</p>
 				</div>
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6">
@@ -482,19 +523,18 @@ export default function Home() {
 			</section>
 			{/* About Us */}
 			<section className=" bg-gray-950 text-white">
-				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
-					<CldImage
-						className="w-full object-contain h-full md:col-span-1"
-						src="smart-panel-nosotros_i6l1sd"
-						width="556"
-						alt="Somos Smart Panel"
-						height="532"
-						crop={{
-							type: "fit",
-							source: true,
-						}}
-					/>
-					<div className="py-20 md:col-span-1">
+
+				<div className="grid grid-cols-1 md:grid-cols-2 items-center">
+					<div className="relative w-full h-full">
+						<div className="clip">
+							<img
+								src="https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513815/smart-panel-nosotros_i6l1sd.png"
+								alt="Smart Panel"
+								className="w-full h-full object-cover"
+							/>
+						</div>
+					</div>
+					<div className="py-20 md:col-span-1 p-4">
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">¿Quiénes Somos?</h2>
 						<p className=" mb-4">
@@ -551,20 +591,18 @@ export default function Home() {
 			</div>
 
 			{/* Contact */}
-			<section className="bg-gray-100 py-10">
-				<div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-					<CldImage
-						className="mx-auto w-auto h-auto"
-						src="smart-panel-contacto_voipaj"
-						width="532"
-						alt={`Smart Panel Contacto`}
-						height="626"
-						crop={{
-							type: "fit",
-							source: true,
-						}}
-					/>
-					<div>
+			<section>
+				<div className="grid grid-cols-1 md:grid-cols-2 items-center">
+					<div className="relative w-full h-full">
+						<div className="clip">
+							<img
+								src="https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513859/smart-panel-residencial-1_oevzku.webp"
+								alt="Smart Panel"
+								className="w-full h-full object-cover"
+							/>
+						</div>
+					</div>
+					<div className="p-10 w-full">
 						<Subtitle text="smart panel" />
 						<h2 className="text-3xl font-bold mb-4">Contáctanos</h2>
 

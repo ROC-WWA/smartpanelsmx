@@ -46,7 +46,7 @@ export default function Slideshow() {
   }, [])
 
   return (
-    <div className="relative w-full h-[500px] overflow-hidden">
+    <div className="relative w-full h-[600px] overflow-hidden">
       {/* Background Images */}
       {slides.map((slide, index) => (
         <div
@@ -75,12 +75,12 @@ export default function Slideshow() {
       {/* Content Overlay */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-          <CldImage src="LOGO-COLOR-SMART-PANEL-SLD_dlklfw" alt="Smart Panel Logo" width={224} height={100} className="mx-auto mb-4 hidden md:block" />
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 sm:mb-8 md:leading-14 leading-8">
-            Somos Fabricantes
+          <CldImage src="LOGO-COLOR-SMART-PANEL-SLD_dlklfw" alt="Smart Panel Logo" width={300} height={100} className="mx-auto mb-4 hidden md:block" />
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 sm:mb-8 md:leading-18 leading-8">
+            Paneles SP:<br /> Somos Fabricantes
             <br />
-            <span className="lg:text-2xl text-lg font-medium">
-              Construcción Inteligente con Panel Aislante
+            <span className="lg:text-xl text-lg font-medium">
+              Panel sándwich de poliestireno expandido para construcciones modulares y eficientes. 
             </span>
           </h1>
           <div

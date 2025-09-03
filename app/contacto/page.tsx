@@ -1,20 +1,93 @@
-"use client"
+"use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import SocialNetworks from "../_components/social";
 import Title from "../_components/title";
 import Link from "next/link";
 import { CheckIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import Script from "next/script";
+import ReCAPTCHA from "react-google-recaptcha";
+
+declare global {
+	interface Window {
+		grecaptcha?: any;
+	}
+}
 
 export default function Contacto() {
-	const [ name, setName ] = useState("");
+	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [phone, setPhone] = useState("");
 	const [subject, setSubject] = useState("");
 	const [message, setMessage] = useState("");
-	const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+	const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(
+		null
+	);
+	const recaptchaContainerRef = useRef<HTMLDivElement>(null);
+	const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as
+		| string
+		| undefined;
+
+	const handleRecaptchaVerify = (token: string) => {
+		setRecaptchaToken(token);
+	};
+
+	// const renderRecaptcha = () => {
+	//   if (!siteKey) return;
+	//   if (!window.grecaptcha) return;
+	//   if (!recaptchaContainerRef.current) return;
+	//   if (recaptchaWidgetId !== null) return; // already rendered
+
+	//   const id = window.grecaptcha.render(recaptchaContainerRef.current, {
+	//     sitekey: siteKey,
+	//     callback: handleRecaptchaVerify,
+	//     "expired-callback": () => setRecaptchaToken(null),
+	//     "error-callback": () => setRecaptchaToken(null),
+	//   });
+	//   setRecaptchaWidgetId(id);
+	// };
+
+	// useEffect(() => {
+	//   // Try rendering in case the script is already present
+	//   renderRecaptcha();
+	//   // eslint-disable-next-line react-hooks/exhaustive-deps
+	// }, [siteKey]);
+	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		
+
+		if (!recaptchaToken) {
+			alert("Por favor, verifica el reCAPTCHA antes de enviar.");
+			return;
+		}
+		try {
+			const response = await fetch("http://127.0.0.1:8001/", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({
+					name,
+					email,
+					phone,
+					subject,
+					message,
+					recaptchaToken,
+				}),
+			});
+			const data = await response.json();
+			console.log(data);
+			// send
+		} catch (error) {
+			console.error("Error:", error);
+		}
+
+		// Reset reCAPTCHA and form after attempt
+		if (recaptchaWidgetId !== null && window.grecaptcha) {
+			window.grecaptcha.reset(recaptchaWidgetId);
+		}
+		setRecaptchaToken(null);
+
+		return;
+
 		const whatsappNumber = "5215610197622"; // Replace with actual WhatsApp number
 		const whatsappMessage = `Hola, me gustaría contactar con ustedes.
 
@@ -24,10 +97,12 @@ export default function Contacto() {
 *Asunto:* ${subject}
 *Mensaje:* ${message}`;
 
-		const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-		
-		window.open(whatsappUrl, '_blank');
-		
+		const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+			whatsappMessage
+		)}`;
+
+		window.open(whatsappUrl, "_blank");
+
 		// Reset form
 		setName("");
 		setEmail("");
@@ -35,6 +110,35 @@ export default function Contacto() {
 		setSubject("");
 		setMessage("");
 	};
+
+	const recaptchaRef = useRef<ReCAPTCHA>(null);
+	const [isVerified, setIsVerified] = useState(false);
+
+	async function handleCaptchaSubmission(token: string | null) {
+		try {
+			if (token) {
+				await fetch("/api", {
+					method: "POST",
+					headers: {
+						Accept: "application/json",
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ token }),
+				});
+				setIsVerified(true);
+			}
+		} catch (e) {
+			setIsVerified(false);
+		}
+	}
+
+	const handleChange = (token: string | null) => {
+		handleCaptchaSubmission(token);
+	};
+
+	function handleExpired() {
+		setIsVerified(false);
+	}
 	return (
 		<>
 			{/* Hero Section */}
@@ -52,18 +156,18 @@ export default function Contacto() {
 							Atención a clientes:
 						</p>
 						<div>
-								<Link href="tel:+521234567890">
-									{" "}
-									<PhoneIcon className="inline mr-2 text-green-500 size-4" /> +52 123 456
-									7890
-								</Link>
-							</div>
+							<Link href="tel:+521234567890">
+								{" "}
+								<PhoneIcon className="inline mr-2 text-green-500 size-4" /> +52
+								123 456 7890
+							</Link>
+						</div>
 						<p className="mb-4">
 							<Link href="mailto:atencionaclientes1@smartpanel.mx">
-									{" "}
-									<EnvelopeIcon className="inline mr-2 text-green-500 size-4" />{" "}
-									atencionaclientes1@smartpanel.mx
-								</Link>
+								{" "}
+								<EnvelopeIcon className="inline mr-2 text-green-500 size-4" />{" "}
+								atencionaclientes1@smartpanel.mx
+							</Link>
 						</p>
 						<p className="mb-2 font-semibold">Planta</p>
 						<p className="mb-4 text-gray-700">
@@ -116,6 +220,22 @@ export default function Contacto() {
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
 							/>
+							{/* reCAPTCHA v2 checkbox */}
+							<ReCAPTCHA
+								sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+								ref={recaptchaRef}
+								onChange={handleChange}
+								onExpired={handleExpired}
+							/>
+							{siteKey ? (
+								<div className="pt-2">
+									<div ref={recaptchaContainerRef} />
+								</div>
+							) : (
+								<p className="text-sm text-red-500">
+									Falta configurar NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+								</p>
+							)}
 							<button
 								type="submit"
 								className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
@@ -138,7 +258,15 @@ export default function Contacto() {
 					referrerPolicy="no-referrer-when-downgrade"
 				/>
 			</section>
-			
+
+			{/* Load reCAPTCHA script once the page is interactive */}
+			{/* {siteKey ? (
+				<Script
+					src="https://www.google.com/recaptcha/api.js?render=explicit"
+					strategy="afterInteractive"
+					onLoad={renderRecaptcha}
+				/>
+			) : null} */}
 		</>
 	);
 }

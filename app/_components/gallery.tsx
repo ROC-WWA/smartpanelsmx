@@ -6,6 +6,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react"
 import { Button } from "./button"
+import { cn } from "@/lib/utils"
 //import { Button } from "@/_components/ui/button"
 
 interface GalleryImage {
@@ -15,10 +16,11 @@ interface GalleryImage {
 }
 
 interface GalleryProps {
-  images: GalleryImage[]
+  images: GalleryImage[],
+  className?: string
 }
 
-export default function Gallery({ images }: GalleryProps) {
+export default function Gallery({ images, className }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   const openLightbox = (index: number) => {
@@ -54,7 +56,7 @@ export default function Gallery({ images }: GalleryProps) {
   return (
     <>
       {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className={cn("grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4", className)}>
         {images.map((image, index) => (
           <div
             key={index}
