@@ -67,7 +67,16 @@ export function ImageGrid() {
   const [hoveredItem, setHoveredItem] = useState<number | null>(null)
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<>
+		<div className="md:hidden">
+{gridItems.map((item) => (
+	<div>
+		<h3 className="text-green-500 text-center font-semibold mb-2">{item.title}</h3>
+		<p className="text-center">{item.description}</p>
+	</div>
+))}
+		</div>
+    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {gridItems.map((item) => (
         <div
           key={item.id}
@@ -103,5 +112,6 @@ export function ImageGrid() {
         </div>
       ))}
     </div>
+		</>
   )
 }
