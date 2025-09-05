@@ -76,13 +76,14 @@ export default function Slideshow() {
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <CldImage src="LOGO-COLOR-SMART-PANEL-SLD_dlklfw" alt="Smart Panel Logo" width={300} height={100} className="mx-auto mb-4 hidden md:block" />
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 sm:mb-8 md:leading-18 leading-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-center md:text-center">
             Paneles SP:<br /> Somos Fabricantes
             <br />
-            <span className="lg:text-xl text-lg font-medium">
-              Panel sándwich de poliestireno expandido para construcciones modulares y eficientes. 
+            <span className="block mt-3 text-base sm:text-lg lg:text-xl font-medium leading-relaxed">
+              Panel sándwich de poliestireno expandido para construcciones modulares y eficientes.
             </span>
           </h1>
+
           <div
         className="py-2 font-semibold"
             >
