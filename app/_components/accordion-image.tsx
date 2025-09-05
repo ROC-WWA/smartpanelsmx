@@ -93,15 +93,15 @@ export default function ImageAccordion({items, defaultActiveId}: {items: Item[],
             {/* Content */}
             <div className="relative flex flex-col justify-center items-center p-6 text-white w-full h-full">
               <h3
-                className={`mb-3 z-10 transition-all duration-500 ${
-                  isActive ? "text-3xl md:text-3xl font-bold" : "text-xl md:text-2xl font-medium"
+                className={`mb-3 z-10 transition-all duration-200 ${
+                  isActive ? "text-2xl md:text-3xl font-bold" : " md:hidden text-xl md:text-2xl font-medium"
                 }`}
               >
                 {item.title}
               </h3>
               {isActive && (
                 <Button
-                  className="bg-green-500 hover:bg-green-500 text-black font-semibold px-6 py-2 rounded-lg transition-colors duration-300 z-10"
+                  className="bg-green-500 hover:bg-green-500 text-white font-semibold px-6 py-2 rounded-lg transition-colors duration-300 z-10"
                   onClick={(e) => {
                     e.stopPropagation()
                     window.location.href = item.href
