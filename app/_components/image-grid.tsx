@@ -69,13 +69,17 @@ export function ImageGrid() {
   return (
 		<>
 		<div className="md:hidden">
-{gridItems.map((item) => (
-	<div>
-		<h3 className="text-green-500 text-center font-semibold mb-2">{item.title}</h3>
-		<p className="text-center">{item.description}</p>
-	</div>
-))}
+			{gridItems.map((item) => (
+				<div
+				key={item.id}
+				className="bg-neutral-800 mb-4 p-4 rounded-md flex flex-col items-center text-center">
+				<h3 className="text-xl text-white font-semibold mb-2">{item.title}</h3>
+				<p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
+				</div>
+			))}
 		</div>
+
+
     <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {gridItems.map((item) => (
         <div
