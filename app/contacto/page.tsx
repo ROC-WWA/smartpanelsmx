@@ -19,10 +19,13 @@ export default function Contacto() {
 	const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(
 		null
 	);
-	const recaptchaContainerRef = useRef<HTMLDivElement>(null);
-	const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as
-		| string
-		| undefined;
+    const recaptchaContainerRef = useRef<HTMLDivElement>(null);
+    // Use Google test site key in development if none provided
+    const TEST_SITE_KEY_V2 = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+    const siteKey = (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
+        (process.env.NODE_ENV !== "production" ? TEST_SITE_KEY_V2 : undefined)) as
+        | string
+        | undefined;
 
 	const handleRecaptchaVerify = (token: string) => {
 		setRecaptchaToken(token);
@@ -56,7 +59,7 @@ export default function Contacto() {
 			return;
 		}
 		try {
-			const response = await fetch("http://127.0.0.1:8001/", {
+			const response = await fetch("/api/contact", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({
@@ -69,10 +72,25 @@ export default function Contacto() {
 				}),
 			});
 			const data = await response.json();
-			console.log(data);
-			// send
+			if (response.ok && data?.success) {
+				alert("Mensaje enviado correctamente.");
+				// Reset form
+				setName("");
+				setEmail("");
+				setPhone("");
+				setSubject("");
+				setMessage("");
+				setIsVerified(false);
+				if (recaptchaRef.current) {
+					recaptchaRef.current.reset();
+				}
+			} else {
+				console.error("Fallo al enviar:", data);
+				alert("No se pudo enviar el mensaje. Intenta de nuevo.");
+			}
 		} catch (error) {
 			console.error("Error:", error);
+			alert("Ocurrió un error al enviar el mensaje.");
 		}
 
 		// Reset reCAPTCHA and form after attempt
@@ -81,55 +99,35 @@ export default function Contacto() {
 		// }
 		setRecaptchaToken(null);
 
-		return;
 
-		const whatsappNumber = "5215610197622"; // Replace with actual WhatsApp number
-		const whatsappMessage = `Hola, me gustaría contactar con ustedes.
-
-*Nombre:* ${name}
-*Email:* ${email}
-*Teléfono:* ${phone}
-*Asunto:* ${subject}
-*Mensaje:* ${message}`;
-
-		const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-			whatsappMessage
-		)}`;
-
-		window.open(whatsappUrl, "_blank");
-
-		// Reset form
-		setName("");
-		setEmail("");
-		setPhone("");
-		setSubject("");
-		setMessage("");
 	};
 
 	const recaptchaRef = useRef<ReCAPTCHA>(null);
 	const [isVerified, setIsVerified] = useState(false);
 
-	async function handleCaptchaSubmission(token: string | null) {
-		try {
-			if (token) {
-				await fetch("/api", {
-					method: "POST",
-					headers: {
-						Accept: "application/json",
-						"Content-Type": "application/json",
-					},
-					body: JSON.stringify({ token }),
-				});
-				setIsVerified(true);
-			}
-		} catch (e) {
-			setIsVerified(false);
-		}
-	}
+    async function handleCaptchaSubmission(token: string | null) {
+        try {
+            if (token) {
+                const res = await fetch("/api/recaptcha", {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ token }),
+                });
+                const data = await res.json();
+                setIsVerified(Boolean(data?.success));
+            }
+        } catch (e) {
+            setIsVerified(false);
+        }
+    }
 
-	const handleChange = (token: string | null) => {
-		handleCaptchaSubmission(token);
-	};
+    const handleChange = (token: string | null) => {
+        setRecaptchaToken(token);
+        handleCaptchaSubmission(token);
+    };
 
 	function handleExpired() {
 		setIsVerified(false);
@@ -215,28 +213,25 @@ export default function Contacto() {
 								value={message}
 								onChange={(e) => setMessage(e.target.value)}
 							/>
-							{/* reCAPTCHA v2 checkbox */}
-							<ReCAPTCHA
-								sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-								ref={recaptchaRef}
-								onChange={handleChange}
-								onExpired={handleExpired}
-							/>
-							{siteKey ? (
-								<div className="pt-2">
-									<div ref={recaptchaContainerRef} />
-								</div>
-							) : (
-								<p className="text-sm text-red-500">
-									Falta configurar NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-								</p>
-							)}
-							<button
-								type="submit"
-								className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
-							>
-								ENVIAR <i className="fas fa-arrow-right ml-2" />
-							</button>
+                        {/* reCAPTCHA v2 checkbox */
+                        }
+                        <ReCAPTCHA
+                            sitekey={siteKey || ""}
+                            ref={recaptchaRef}
+                            onChange={handleChange}
+                            onExpired={handleExpired}
+                        />
+                        {!siteKey ? (
+                            <p className="text-sm text-red-500">
+                                Falta configurar NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+                            </p>
+                        ) : null}
+                        <button
+                            type="submit"
+                            className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
+                            >
+                            ENVIAR <i className="fas fa-arrow-right ml-2" />
+                        </button>
 						</form>
 					</div>
 				</div>
