@@ -65,16 +65,18 @@ export default function ImageAccordion({items, defaultActiveId}: {items: Item[],
   const [activeId, setActiveId] = useState<number>(defaultActiveId || 1)
 
   return (
-    <div className="flex h-[500px] gap-2 rounded-xl overflow-hidden shadow-2xl">
+    <div className="flex flex-col md:flex-row h-auto md:h-[500px] gap-2 rounded-xl overflow-hidden shadow-2xl">
       {items.map((item) => {
         const isActive = item.id === activeId
 
         return (
           <div
             key={item.id}
-            className={`relative cursor-pointer transition-all duration-700 ease-in-out ${
-              isActive ? "flex-[3]" : "flex-[0.5]"
-            }`}
+            className={`
+              relative cursor-pointer transition-all duration-700 ease-in-out
+              ${isActive ? "md:flex-[3] flex-[1]" : "md:flex-[0.5] flex-[0.2]"}
+              flex flex-col justify-center items-center text-center
+            `}
             onClick={() => setActiveId(item.id)}
           >
             {/* Background Image */}
@@ -89,22 +91,24 @@ export default function ImageAccordion({items, defaultActiveId}: {items: Item[],
             <div className="absolute inset-0 bg-black/30" />
 
             {/* Content */}
-            <div className="relative h-full flex flex-col justify-end p-6 text-white">
-              {!isActive ? (
-                <div></div>
-              ) : (
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-bold">{item.title}</h3>
-                  <Button
-                    className="bg-green-500 hover:bg-green-500 text-black font-semibold px-6 py-2 rounded-lg transition-colors duration-300"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      window.location.href = item.href
-                    }}
-                  >
-                    Ver más
-                  </Button>
-                </div>
+            <div className="relative flex flex-col justify-center items-center p-6 text-white w-full h-full">
+              <h3
+                className={`mb-3 z-10 transition-all duration-500 ${
+                  isActive ? "text-3xl md:text-3xl font-bold" : "text-xl md:text-2xl font-medium"
+                }`}
+              >
+                {item.title}
+              </h3>
+              {isActive && (
+                <Button
+                  className="bg-green-500 hover:bg-green-500 text-black font-semibold px-6 py-2 rounded-lg transition-colors duration-300 z-10"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    window.location.href = item.href
+                  }}
+                >
+                  Ver más
+                </Button>
               )}
             </div>
           </div>
