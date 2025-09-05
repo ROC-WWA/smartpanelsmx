@@ -1,9 +1,21 @@
 import { EmailTemplate } from '@/app/_components/email-template';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) return null;
+  return new Resend(apiKey);
+}
 
 export async function POST() {
+  const resend = getResend();
+  if (!resend) {
+    return Response.json(
+      { error: 'RESEND_API_KEY not configured' },
+      { status: 500 }
+    );
+  }
+
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',

@@ -1,4 +1,6 @@
 import type { MetadataRoute } from 'next'
+// Ensure static generation for `output: export` builds
+export const dynamic = 'force-static'
 import fs from 'fs'
 import path from 'path'
 
@@ -77,4 +79,3 @@ function shouldSkip(name: string): boolean {
 function ensureTrailingSlash(u: string): string {
   return u.endsWith('/') ? u : `${u}/`
 }
-
