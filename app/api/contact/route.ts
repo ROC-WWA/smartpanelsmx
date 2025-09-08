@@ -7,6 +7,8 @@ type ContactBody = {
   subject?: string;
   message?: string;
   recaptchaToken?: string | null;
+  // Honeypot field: bots often fill hidden inputs
+  honeypot?: string;
 };
 
 async function verifyRecaptcha(token: string | null | undefined, req: Request) {
@@ -60,7 +62,12 @@ function getResend() {
 export async function POST(request: Request) {
   try {
     const body = (await request.json()) as ContactBody;
-    const { name, email, phone, subject, message, recaptchaToken } = body;
+    const { name, email, phone, subject, message, recaptchaToken, honeypot } = body;
+
+    // Drop obvious bot submissions: if honeypot contains anything, pretend success
+    if (honeypot && honeypot.trim().length > 0) {
+      return Response.json({ success: true });
+    }
 
     // Basic validation
     if (!name || !email || !message) {
@@ -128,4 +135,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

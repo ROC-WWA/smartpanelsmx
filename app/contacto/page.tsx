@@ -1,114 +1,12 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import SocialNetworks from "../_components/social";
 import Title from "../_components/title";
 import Link from "next/link";
-import { CheckIcon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
-import ReCAPTCHA from "react-google-recaptcha";
-
+import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/solid";
+import ContactForm from "./form";
 
 export default function Contacto() {
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
-	const [phone, setPhone] = useState("");
-	const [subject, setSubject] = useState("");
-	const [message, setMessage] = useState("");
-	const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
-	const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(
-		null
-	);
-    const recaptchaContainerRef = useRef<HTMLDivElement>(null);
-    // Use Google test site key in development if none provided
-    const TEST_SITE_KEY_V2 = "6LeJnbgrAAAAAKJuHHaTnwkQurJPGjfLfSuzU6UW";
-    const siteKey = (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
-        (process.env.NODE_ENV !== "production" ? TEST_SITE_KEY_V2 : undefined)) as
-        | string
-        | undefined;
-
-	const handleRecaptchaVerify = (token: string) => {
-		setRecaptchaToken(token);
-	};
-
-	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-
-		if (!recaptchaToken) {
-			alert("Por favor, verifica el reCAPTCHA antes de enviar.");
-			return;
-		}
-		try {
-			const response = await fetch("/api/contact", {
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({
-					name,
-					email,
-					phone,
-					subject,
-					message,
-					recaptchaToken,
-				}),
-			});
-			const data = await response.json();
-			if (response.ok && data?.success) {
-				alert("Mensaje enviado correctamente.");
-				// Reset form
-				setName("");
-				setEmail("");
-				setPhone("");
-				setSubject("");
-				setMessage("");
-				setIsVerified(false);
-				if (recaptchaRef.current) {
-					recaptchaRef.current.reset();
-				}
-			} else {
-				console.error("Fallo al enviar:", data);
-				alert("No se pudo enviar el mensaje. Intenta de nuevo.");
-			}
-		} catch (error) {
-			console.error("Error:", error);
-			alert("Ocurrió un error al enviar el mensaje.");
-		}
-		setRecaptchaToken(null);
-
-
-	};
-
-	const recaptchaRef = useRef<ReCAPTCHA>(null);
-	const [isVerified, setIsVerified] = useState(false);
-
-    async function handleCaptchaSubmission(token: string | null) {
-        try {
-            if (token) {
-                const res = await fetch("/api/recaptcha", {
-                    method: "POST",
-                    headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({ token }),
-                });
-                const data = await res.json();
-                setIsVerified(Boolean(data?.success));
-            }
-        } catch (e) {
-            setIsVerified(false);
-        }
-    }
-
-    const handleChange = (token: string | null) => {
-        setRecaptchaToken(token);
-        handleCaptchaSubmission(token);
-    };
-
-	function handleExpired() {
-		setIsVerified(false);
-	}
-	return (
-		<>
+  return (
+    <>
 			{/* Hero Section */}
 			<Title>Contacto</Title>
 			{/* Contact Section */}
@@ -150,64 +48,7 @@ export default function Contacto() {
 					{/* Contact Form */}
 					<div className="bg-gray-50 p-6 rounded-md shadow-md">
 						<h3 className="text-lg font-semibold mb-4">Envía un mensaje</h3>
-						<form className="space-y-4" onSubmit={onSubmit}>
-							<input
-								type="text"
-								placeholder="Nombre*"
-								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
-								value={name}
-								onChange={(e) => setName(e.target.value)}
-							/>
-							<div className="grid grid-cols-2 gap-4">
-								<input
-									type="email"
-									placeholder="Email*"
-									className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-								/>
-								<input
-									type="text"
-									placeholder="Teléfono*"
-									className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
-									value={phone}
-									onChange={(e) => setPhone(e.target.value)}
-								/>
-							</div>
-							<input
-								type="text"
-								placeholder="Asunto"
-								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
-								value={subject}
-								onChange={(e) => setSubject(e.target.value)}
-							/>
-							<textarea
-								rows={5}
-								placeholder="Mensaje"
-								className="w-full border border-gray-300 rounded-md px-4 py-2 bg-white"
-								value={message}
-								onChange={(e) => setMessage(e.target.value)}
-							/>
-                        {/* reCAPTCHA v2 checkbox */
-                        }
-                        <ReCAPTCHA
-                            sitekey={siteKey || ""}
-                            ref={recaptchaRef}
-                            onChange={handleChange}
-                            onExpired={handleExpired}
-                        />
-                        {!siteKey ? (
-                            <p className="text-sm text-red-500">
-                                Falta configurar NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-                            </p>
-                        ) : null}
-                        <button
-                            type="submit"
-                            className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold"
-                            >
-                            ENVIAR <i className="fas fa-arrow-right ml-2" />
-                        </button>
-						</form>
+						<ContactForm />
 					</div>
 				</div>
 			</section>
@@ -223,15 +64,6 @@ export default function Contacto() {
 					referrerPolicy="no-referrer-when-downgrade"
 				/>
 			</section>
-
-			{/* Load reCAPTCHA script once the page is interactive */}
-			{/* {siteKey ? (
-				<Script
-					src="https://www.google.com/recaptcha/api.js?render=explicit"
-					strategy="afterInteractive"
-					onLoad={renderRecaptcha}
-				/>
-			) : null} */}
 		</>
-	);
+  );
 }
