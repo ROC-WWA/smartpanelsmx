@@ -22,7 +22,7 @@ export default function ContactForm({ className }: Props) {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   // Use Google test site key in development if none provided
-  const TEST_SITE_KEY_V2 = "6LeJnbgrAAAAAKJuHHaTnwkQurJPGjfLfSuzU6UW";
+  const TEST_SITE_KEY_V2 = "6LfHeMIrAAAAAMIjmBmqrmc4GYjkcQSCUhOfWvS_";
   const siteKey = (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
     (process.env.NODE_ENV !== "production" ? TEST_SITE_KEY_V2 : undefined)) as
     | string
