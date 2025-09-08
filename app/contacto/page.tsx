@@ -21,7 +21,7 @@ export default function Contacto() {
 	);
     const recaptchaContainerRef = useRef<HTMLDivElement>(null);
     // Use Google test site key in development if none provided
-    const TEST_SITE_KEY_V2 = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+    const TEST_SITE_KEY_V2 = "6LeJnbgrAAAAAKJuHHaTnwkQurJPGjfLfSuzU6UW";
     const siteKey = (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ||
         (process.env.NODE_ENV !== "production" ? TEST_SITE_KEY_V2 : undefined)) as
         | string
@@ -31,26 +31,6 @@ export default function Contacto() {
 		setRecaptchaToken(token);
 	};
 
-	// const renderRecaptcha = () => {
-	//   if (!siteKey) return;
-	//   if (!window.grecaptcha) return;
-	//   if (!recaptchaContainerRef.current) return;
-	//   if (recaptchaWidgetId !== null) return; // already rendered
-
-	//   const id = window.grecaptcha.render(recaptchaContainerRef.current, {
-	//     sitekey: siteKey,
-	//     callback: handleRecaptchaVerify,
-	//     "expired-callback": () => setRecaptchaToken(null),
-	//     "error-callback": () => setRecaptchaToken(null),
-	//   });
-	//   setRecaptchaWidgetId(id);
-	// };
-
-	// useEffect(() => {
-	//   // Try rendering in case the script is already present
-	//   renderRecaptcha();
-	//   // eslint-disable-next-line react-hooks/exhaustive-deps
-	// }, [siteKey]);
 	const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
@@ -92,11 +72,6 @@ export default function Contacto() {
 			console.error("Error:", error);
 			alert("Ocurrió un error al enviar el mensaje.");
 		}
-
-		// Reset reCAPTCHA and form after attempt
-		// if (recaptchaWidgetId !== null && window.grecaptcha) {
-		// 	window.grecaptcha.reset(recaptchaWidgetId);
-		// }
 		setRecaptchaToken(null);
 
 
