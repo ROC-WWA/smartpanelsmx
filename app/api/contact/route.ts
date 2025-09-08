@@ -97,8 +97,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const from = process.env.CONTACT_FROM || 'Website <onboarding@resend.dev>';
-    const to = process.env.CONTACT_TO || 'delivered@resend.dev';
+    const from = process.env.CONTACT_FROM || 'Website <contactus@contactus.smartpanel.mx>';
+    const to = process.env.CONTACT_TO || 'ulises@rocwwa.com';
 
     const text = [
       `Nuevo mensaje del formulario de contacto`,
