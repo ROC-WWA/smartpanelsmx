@@ -146,6 +146,7 @@ export default function Testimonial() {
 					<p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-100 sm:text-5xl">
 						La voz de nuestros clientes nos respalda:
 					</p>
+					<p className="text-white text-xl mt-4"> Experiencias reales de quienes construyen con nosotros</p>
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
 					<figure className="rounded-2xl bg-white shadow-lg ring-1 ring-gray-900/5 sm:col-span-2 xl:col-start-2 xl:row-end-1">

@@ -91,34 +91,34 @@ const features = [
 
 const reasonsToChooseUs = [
 	{
-		title: "Materiales",
+		title: "Materiales de alto rendimiento",
 		description:
-			"Materiales prefabricados con alto rendimiento térmico y estructural",
+			"Paneles con gran aislamiento térmico y resistencia estructural.",
 		image: "smart-panel-icon3_nz06t0",
 	},
 	{
-		title: "Soluciones adaptables",
-		description: "Soluciones adaptables a todo tipo de proyectos",
+		title: "Instalación Rápida",
+		description: "Montaje limpio y sin obra húmeda. Más rápido, menos escombro.",
 		image: "smart-panel-icon4_avnhd5",
 	},
 	{
-		title: "Entregas",
-		description: "Entregas a todo México",
+		title: "Versatilidad por Sector",
+		description: "Soluciones adaptadas a industria, salud, vivienda y más.",
 		image: "smart-panel-icon1_aemfrq",
 	},
 	{
-		title: "Instalación rápida",
-		description: "Instalación rápida y limpia sin obra húmeda",
+		title: "Cortes y Asesoría Técnica",
+		description: "Paneles a medida con soporte experto incluido.",
 		image: "smart-panel-icon7_wbtvdo",
 	},
 	{
-		title: "Personalización",
-		description: "Cortes personalizados y asesoría técnica incluida",
+		title: "Cobertura Nacional",
+		description: "Entregas confiables a cualquier parte de México.",
 		image: "smart-panel-icon5_gwavtw",
 	},
 	{
 		title: "Energía Optimizada",
-		description: "Materiales de bajo consumo eléctrico para su producción",
+		description: "Materiales de bajo consumo eléctrico y alta eficiencia energética.",
 		image: "smart-panel-icon2_sxim6n",
 	},
 ];
@@ -325,12 +325,15 @@ export default function Home() {
 								</div>
 							</div>
 							<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
-								Panel MURO SP / PLAFÓN
+								Panel Muro SP
 							</h3>
+							<p className="font-bold text-base mb-2 text-left group-hover:text-white">Ideal para muros y plafones</p>
 							<p className="text-gray-600 text-left group-hover:text-white py-4">
-								Panel prefabricado tipo sándwich. Disponibles en varias opciones
-								de espesor, ajustándose al nivel de aislamiento térmico y uso
-								específico del proyecto.
+								 Panel tipo sándwich de poliestireno ideal para muros y plafones con excelente 
+								 aislamiento térmico y acústico. Fabricado con núcleo de poliestireno expandido (EPS) y doble lámina galvanizada.
+							</p>
+							<p className="text-gray-600 text-left group-hover:text-white">Disponible en distintos espesores y longitudes de acuerdo a tu proyecto.<br></br>
+								<strong>Descubre también la línea de accesorios compatibles para optimizar su instalación y acabado estético.</strong>
 							</p>
 							<div className="py-4 flex">
 								<div className="relative">
@@ -374,12 +377,16 @@ export default function Home() {
 								</div>
 							</div>
 							<h3 className="font-bold text-xl mb-2 text-left group-hover:text-white">
-								Panel TECHO SP
+								Panel Techo SP
 							</h3>
+							<p className="font-bold text-base mb-2 text-left group-hover:text-white">Cubiertas térmicas resistentes y rápidas de instalar</p>
 							<p className="text-gray-600 text-left group-hover:text-white py-4">
-								Panel prefabricado tipo sándwich. Disponibles en varias opciones
-								de espesor, ajustándose al nivel de aislamiento térmico y uso
-								específico del proyecto.
+								Panel sándwich para techos: con núcleo de poliestireno expandido (EPS) y láminas galvanizadas, 
+								diseñado para un montaje rápido y seguro. Su diseño con crestas y valles, más una cresta extra 
+								para traslapes transversales, refuerza la estructura y la hermeticidad.
+							</p>
+							<p className="text-gray-600 text-left group-hover:text-white">Disponible en distintos espesores y longitudes de acuerdo a tu proyecto.<br></br>
+								<strong>Descubre también la línea de accesorios compatibles para optimizar su instalación y acabado estético.</strong>
 							</p>
 							<div className="py-4 flex">
 								<div className="relative">
@@ -398,17 +405,22 @@ export default function Home() {
 			</section>
 			{/* Sectors Section */}
 			<section className="py-20 px-4 space-y-4">
-				<div className="text-center mb-10">
+				<div className="text-center mb-6">
 					<div className="flex justify-center">
 						<Subtitle text="smart panel" />
 					</div>
-					<h2 className="text-3xl font-bold">Sectores</h2>
+					<h2 className="text-3xl font-bold">Panel Sándwich SP: eficiencia aplicada a distintos sectores</h2>
 				</div>
 				<div className="text-center">
+					<p className=" text-lg font-semibold mb-6">
+						Modularidad, eficiencia y aislamiento adaptados a las exigencias de tu industria
+					</p>
 					<p>
-						Nuestros sistemas son utilizados en sectores clave de México,
-						respondiendo a estándares técnicos, estéticos y ambientales en todo
-						tipo de obras.
+						Nuestros sistemas con paneles prefabricados SP son utilizados en sectores
+						clave de México.<br></br>Brindan rapidez constructiva, control térmico y cumplimiento normativo
+						en espacios farmacéuticos, alimenticios, institucionales, industriales, logísticos y
+						residenciales.<br></br>Cada solución se adapta al uso específico del proyecto, optimizando
+						recursos, tiempos y durabilidad.
 					</p>
 				</div>
 				<div className="max-w-6xl mx-auto mt-10 space-y-8">
@@ -425,16 +437,13 @@ export default function Home() {
 					</h2>
 					<div className="grid md:grid-cols-2 gap-8">
 						<div className="space-y-4">
-							<p className="">
-								Con Smart Panel, estás apostando por una construcción más
-								eficiente y sustentable. Ayudas a disminuir el consumo
-								eléctrico, reducir emisiones y avanzar hacia edificaciones más
-								responsables con el medio ambiente.
+							<p >
+								Con el Panel Sándwich SP, estás apostando por una construcción más eficiente y sustentable. 
+								Ayudas a disminuir el consumo eléctrico, reducir emisiones y avanzar hacia edificaciones más responsables con el medio ambiente.
 							</p>
 							<p>
-								Estamos comprometidos con la eficiencia energética y el cuidado
-								del medio ambiente. Por eso, todos nuestros productos están
-								diseñados para:
+								Estamos comprometidos con la eficiencia energética y el cuidado del planeta. 
+								Por eso, todos nuestros productos, incluido el Panel Sándwich SP, están diseñados para ofrecer soluciones modernas, seguras y amigables con la naturaleza.
 							</p>
 							<CldImage
 								className="w-full mt-6"
@@ -467,7 +476,8 @@ export default function Home() {
 					<div className="flex justify-center">
 						<Subtitle text="Smart Panel" />
 					</div>
-					<h2 className="text-3xl font-bold mb-10">¿Por qué elegirnos?</h2>
+					<h2 className="text-3xl font-bold mb-4">¿Por qué elegirnos?</h2>
+					<h2 className="text-xl font-bold mb-8">:Construcción inteligente: más rápida, eficiente y confiable para tu proyecto</h2>
 					<div className="flex-row flex flex-wrap">
 						<div className="w-full md:w-1/3 order-2 md:order-1">
 							{reasonsToChooseUs.slice(0, 3).map((reason, index) => (
@@ -535,8 +545,11 @@ export default function Home() {
 						</div>
 					</div>
 					<div className="py-20 md:col-span-1 p-4">
-						<Subtitle text="smart panel" />
-						<h2 className="text-3xl font-bold mb-4">¿Quiénes Somos?</h2>
+						{/*<Subtitle text="smart panel" />*/}
+						<h2 className="text-3xl font-bold mb-4">Smart Panel: ¿Quiénes somos?</h2>
+						<p className="font-bold text-xl mb-4">Fabricantes de Paneles Aislantes para Construcción Modular en México</p>
+						<p className="font-bold text-lg mb-4">Soluciones rápidas, eficientes y sustentables para edificaciones industriales,
+logísticas, residenciales y sanitarias</p>
 						<p className=" mb-4">
 							SMART PANEL es una empresa 100% mexicana dedicada a la fabricación
 							de panel de poliestireno expandido reforzados con acero. Con sede
@@ -609,6 +622,7 @@ export default function Home() {
 						<div className="bg-gray-950 text-white p-6 rounded-md space-y-4">
 							<div>
 								<h4 className="text-green-500">Atención a clientes:</h4>
+								<h5 className="text-green-500 mb-4">Resolvemos tus dudas y te asesoramos para tu próximo proyecto</h5>
 							</div>
 							<div>
 								<Link href="tel:+521234567890" className="hover:text-green-500">
