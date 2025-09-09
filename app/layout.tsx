@@ -66,14 +66,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={quicksand.className}>
+		<html lang="en" className={quicksand.className} >
 			<GoogleTagManager gtmId="GTM-54GRLXR" />
 			<Head>
 				<title>Title</title>
 				<meta charSet="UTF-8" />
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1, shrink-to-fit=no"
+					content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no"
 				/>
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta

@@ -253,24 +253,30 @@ export default function Home() {
 							}}
 						/>
 					</div>
-					<div className="ml-0 md:ml-10">
-						<Subtitle text="smart panel" />
-						<h2 className="text-3xl font-bold mb-4">
+					<div className="ml-0 md:ml-10 py-4 text-center">
+						<div className="flex justify-center md:justify-start">
+							<Subtitle text="smart panel" />
+						</div>
+						<div className="mb-4">
+							<h2 className="text-2xl md:text-3xl font-bold">
 							Construcción Inteligente
-						</h2>
-						<p>Para un México más Eficiente</p>
-						<p className="mb-10">
+							</h2>
+							<p className="text-xl">Para un México más Eficiente</p>
+						</div>
+						<p className="mb-10 text-beauty text-lg">
 							Diseñamos nuestros sistemas para proyectos industriales,
 							comerciales, educativos, residenciales, entre otros, con el
 							objetivo de crear espacios cómodos, resistentes y sostenibles que
 							respondan a los desafíos actuales de la construcción.
 						</p>
-						<Link
-							href="#"
+						<div className="py-8">
+							<Link
+							href="/contacto"
 							className="bg-green-500 hover:bg-green-500 px-6 py-2 rounded-md font-semibold text-white"
 						>
 							Contáctanos
 						</Link>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -521,13 +527,13 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<div className="text-center mt-20">
+			<div className="text-center mt-6 md:mt-20">
 				<div className="flex justify-center">
 					<Subtitle text="smart panel" />
 				</div>
 				<h2 className="text-3xl font-bold">Aplicaciones</h2>
 			</div>
-			<section className="max-w-6xl mx-auto px-6 py-20 space-y-10">
+			<section className="max-w-6xl mx-auto md:px-6 py-4 md:py-20 space-y-2 md:space-y-10">
 				<ImageAccordion items={items.slice(0, 4)} defaultActiveId={1} />
 				<ImageAccordion items={items.slice(4, 8)} defaultActiveId={8} />
 			</section>
@@ -577,7 +583,7 @@ logísticas, residenciales y sanitarias</p>
 			</section>
 
 			{/* Testimonials */}
-			<section className="bg-gray-950 text-white py-20">
+			<section className="bg-gray-950 text-white">
 				<div className="max-w-6xl mx-auto px-6 text-center">
 					<div>
 						<Testimonial />

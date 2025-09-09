@@ -130,7 +130,7 @@ export function Navigation() {
 		>
 			<div
 				className={cn(
-					"bg-neutral-700 text-white text-sm flex flex-wrap justify-between items-center px-6 py-2",
+					"bg-neutral-700 text-white text-xs font-medium md:text-sm flex flex-wrap justify-between items-center px-6 py-2",
 					isScrolled ? "hidden" : ""
 				)}
 			>

@@ -65,7 +65,7 @@ export default function ImageAccordion({items, defaultActiveId}: {items: Item[],
   const [activeId, setActiveId] = useState<number>(defaultActiveId || 1)
 
   return (
-    <div className="flex flex-col md:flex-row h-auto md:h-[500px] gap-2 rounded-xl overflow-hidden shadow-2xl">
+    <div className="flex flex-col md:flex-row h-auto md:h-[500px] gap-2 md:rounded-xl overflow-hidden shadow-2xl">
       {items.map((item) => {
         const isActive = item.id === activeId
 

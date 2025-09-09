@@ -160,10 +160,10 @@ export default function PanelMuro() {
 						</div>
 					</div>
 					<Link
-						href="tel:5610197622"
+						href="tel:+525610197622"
 						className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold mt-4 inline-block"
 					>
-						<i className="fas fa-phone-alt mr-2" /> Llama ahora: 56 1019 7622
+						<i className="fas fa-phone-alt mr-2" /> Llama ahora: +52 56 1019 7622
 					</Link>
 				</div>
 			</section>

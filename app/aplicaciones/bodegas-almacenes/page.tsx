@@ -1,5 +1,6 @@
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
+import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
 import Link from "next/link";
@@ -47,7 +48,7 @@ export default function NavesIndustriales() {
 	return (
 		<>
 			{/* Hero Section */}
-			<Title>{info.title}</Title>
+			<ImageHeader title={info.title} backgroundImage={"https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513874/smart-panel.banner-aplicaciones-bodegas-scaled_zvy3db.png"} />
 			{/* Description */}
 			<section className="bg-white py-16">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
