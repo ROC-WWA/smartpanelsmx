@@ -19,7 +19,9 @@ const CTA = () => {
 				<p className="mb-6">
 					Contáctanos hoy y recibe atención personalizada de nuestros expertos. En Smart Panel, te ayudamos a elegir la mejor solución para tu proyecto, ya sea un panel para muro exterior, una caseta prefabricada o una nave completa.
 				</p>
-				<ContactButton />
+				<div className="flex justify-center">
+					<ContactButton />
+				</div>
 			</div>
 		</section>
 	);
