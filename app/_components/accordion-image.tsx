@@ -39,7 +39,7 @@ export const items: Item[] = [
     id: 5,
     title: "Aulas",
     image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513790/smart-panel-aplicaciones-aulas-3-460x460_1_ju7dac.webp",
-    href: "/aplicaciones/aulas",
+    href: "/aplicaciones/aulas-prefabricadas",
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const items: Item[] = [
     id: 7,
     title: "Casetas",
     image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513796/smart-panel-aplicaciones-casetas-4_iddzpp.webp",
-    href: "/aplicaciones/casetas",
+    href: "/aplicaciones/casetas-prefabricadas",
   },
   {
     id: 8,
