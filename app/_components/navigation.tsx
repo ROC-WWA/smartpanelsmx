@@ -63,6 +63,7 @@ const applications = [
 		href: "/aplicaciones/bodegas-almacenes",
 		icon: PlayCircleIcon,
 	},
+	{ name: "Casetas", href: "/aplicaciones/casetas-prefabricadas", icon: PhoneIcon },
 	{ name: "Cámaras", href: "/aplicaciones/camaras", icon: PhoneIcon },
 	{ name: "Techos", href: "/aplicaciones/techos", icon: PlayCircleIcon },
 	{ name: "Hospitales", href: "/aplicaciones/hospitales", icon: PhoneIcon },
