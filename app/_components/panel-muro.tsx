@@ -93,7 +93,7 @@ export default function ShowcaseMuro() {
               {/* Tooltip Card */}
               {isTooltipVisible(tooltip.id) && (
                 <div
-                  className={`absolute z-10 w-72 rounded-2xl shadow-xl border-0 bg-white/95 backdrop-blur-sm transition-all duration-300 ${
+                  className={`absolute z-10 w-48 rounded-2xl shadow-xl border-0 bg-white/95 backdrop-blur-sm transition-all duration-300 ${
                     tooltip.x > 50 ? "right-10" : "left-10"
                   } ${tooltip.y > 50 ? "bottom-10" : "top-10"}`}
                   style={{
