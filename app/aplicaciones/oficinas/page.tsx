@@ -1,8 +1,11 @@
+"use client";
+import CallUs from "@/app/_components/callus";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -10,7 +13,7 @@ const info = {
 	description:
 		"El Panel SP es una solución ideal para la construcción de oficinas funcionales que requieren rapidez de instalación, eficiencia energética y una imagen profesional. Gracias a su diseño modular y su composición con núcleo de EPS, permite crear espacios laborales con alto rendimiento térmico y acústico, ideales para entornos productivos.",
 	cta: "Cotiza Ahora",
-	image: "/smart-panel-aplicacion-nave-industrial-3.webp",
+	image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513798/smart-panel-aplicaciones-oficinas-1_b1itpc.webp",
 	advantageTitle: "Ventajas técnicas del sistema:",
 	adaventages: [
 		"Aislamiento térmico eficiente: el EPS ofrece baja conductividad térmica, reduciendo significativamente las pérdidas de energía y mejorando el confort interior.",
@@ -105,10 +108,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+							<CldImage
+								src="smart-panel-aplicaciones-oficinas-2-300x300_xxbw3y"
+								alt="Panel SmartPanel instalado en oficina"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>
@@ -121,9 +126,9 @@ export default function NavesIndustriales() {
 						<p className="text-gray-700 text-lg mb-4">
 							{info.section.text}
 						</p>
-						<p className="text-green-500 font-semibold text-lg mb-4">
-							<i className="fas fa-phone-alt mr-2" /> +52 1 56 1019 7622
-						</p>
+						<div>
+							<CallUs />
+						</div>
 					</div>
 					<img
 						src={info.section.image}

@@ -1,8 +1,10 @@
+"use client";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -106,10 +108,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+							<CldImage
+								src="smart-panel-aplicaciones-almacen-1-460x460_ov5jgc"
+								alt="Panel SmartPanel instalado en residencia habitacional"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>

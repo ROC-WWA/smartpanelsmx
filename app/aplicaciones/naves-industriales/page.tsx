@@ -1,3 +1,4 @@
+"use client";
 import CallUs from "@/app/_components/callus";
 import { ContactButton } from "@/app/_components/contact-button";
 import CTA from "@/app/_components/cta";
@@ -5,6 +6,7 @@ import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -100,10 +102,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
+							<CldImage
+								src="smart-panel-aplicacion-nave-industrial-2_fwetm0"
 								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>

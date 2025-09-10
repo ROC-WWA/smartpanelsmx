@@ -8,39 +8,33 @@ import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
-	title: "Cámaras",
-	description:
-		"Los paneles tipo sándwich SP de poliestireno (EPS) son una solución eficiente y confiable para la construcción de cámaras de congelación, conservación y cuartos fríos industriales. Gracias a su alto poder aislante, permiten mantener temperaturas controladas con un menor consumo energético, lo que se traduce en ahorro operativo y una conservación óptima de productos sensibles.El espesor del panel varía según las temperaturas que el proyecto requiera, garantizando así un aislamiento adecuado para cada necesidad específica. Su sistema de ensamble tipo Sig-Lock asegura un cierre hermético que evita fugas térmicas, mejorando significativamente el rendimiento del sistema de refrigeración.Además, su diseño modular facilita una instalación rápida, precisa y segura, acelerando los tiempos de obra sin comprometer la calidad. Esto optimiza los procesos en aplicaciones industriales, alimenticias, farmacéuticas y logísticas.",
+	title: "Casetas",
+	description:<>
+  <p>Las casetas construidas con panel tipo sándwich son una solución práctica y eficiente para múltiples aplicaciones: desde casetas de vigilancia y control de acceso, hasta módulos de obra, oficinas móviles o puntos de atención temporales.</p>
+  <p>Gracias a su diseño modular y ligereza, permiten una instalación ágil, limpia y sin complicaciones, optimizando tiempos y costos. Además, ofrecen un excelente aislamiento térmico y acústico, proporcionando confort en cualquier entorno.</p>
+  </>,
 	cta: "Cotiza Ahora",
-	image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513793/smart-panel-aplicaciones-camaras-2_xskctt.webp",
-	advantageTitle: "Aplicaciones comunes:",
+	image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513794/smart-panel-aplicaciones-casetas-1_iz6ann.webp",
+	advantageTitle: "Construye techos inteligentes con panel SP.:",
 	adaventages: [
-		"Cámaras de congelación",
-		"Cámaras de conservación",
-		"Cuartos fríos industriales.",
-		"Áreas de refrigeración y almacenamiento controlado.",
+		"Instalación rápida y traslado sencillo",
+		"Aislamiento térmico y acústico",
+		"Alta durabilidad con bajo mantenimiento",
+		"Acabado limpio y profesional",
+    "Versatilidad de usos y configuraciones",
+    "Ideal para espacios temporales o permanentes"
 	],
 	gallery: [
 		{
-			src: "/smart-panel-panel-para-camaras-img-03.webp",
-			alt: "Panel SmartPanel instalado en cámara de congelación",
-			title: "Cámara de Congelación con Paneles SmartPanel",
+			src: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513796/smart-panel-aplicaciones-casetas-4_iddzpp.webp",
+			alt: "Instalación de paneles SmartPanel en Caseta",
+			title: "Instalación de paneles SmartPanel en Caseta",
 		},
 		{
-			src: "/smart-panel-panel-para-camaras-img-04.webp",
-			alt: "Vista interior de cámara de congelación con paneles SmartPanel",
-			title: "Interior de Cámara de Congelación con Paneles SmartPanel",
+			src: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513795/smart-panel-aplicaciones-casetas-3_l8rmrr.webp",
+			alt: "Instalación de paneles SmartPanel en Caseta",
+			title: "Interior de Instalación de paneles SmartPanel en Caseta",
 		},
-		{
-			src: "/smart-panel-panel-para-camaras-img-05.webp",
-			alt: "Vista interior de cámara de congelación con paneles SmartPanel",
-			title: "Vista interior de cámara de Congelación con Paneles SmartPanel",
-		},
-    {
-      src: "/smart-panel-panel-para-camaras-img-01.webp",
-      alt: "Panel SmartPanel instalado en cámara de congelación",
-      title: "Cámara de Congelación con Paneles SmartPanel",
-    }
 	],
 };
 
@@ -48,14 +42,14 @@ export default function NavesIndustriales() {
 	return (
 		<>
 			{/* Hero Section */}
-			<ImageHeader title={info.title} backgroundImage={"https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513875/smart-panel.banner-aplicaciones-camaras-scaled_siefvk.png"} />
+			<ImageHeader title={info.title} backgroundImage={"https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513876/smart-panel.banner-aplicaciones-casetas-scaled_ziadgq.png"} />
 			{/* Description */}
 			<section className="bg-white py-16">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
 					<div>
-						<p className="text-gray-700 text-lg leading-relaxed mb-6">
+						<div className="text-gray-700 text-lg leading-relaxed mb-6">
 							{info.description}
-						</p>
+						</div>
 						<Link
 							href="/contacto"
 							className="bg-green-500 hover:bg-green-500 text-white px-6 py-2 rounded-md font-semibold inline-flex items-center"
@@ -107,7 +101,7 @@ export default function NavesIndustriales() {
 						</div>
 						<div className="flex justify-center items-center">
 							<CldImage
-								src="smart-panel-aplicaciones-camaras-1-460x460_bfzntd"
+								src="smart-panel-aplicaciones-casetas-2-460x460_yzfe6a"
 								alt="Panel SmartPanel instalado en residencia habitacional"
 								width={300}
 								height={300}
@@ -120,7 +114,7 @@ export default function NavesIndustriales() {
 
 			{/* Image Gallery */}
 			<section className="py-16 bg-white max-w-6xl mx-auto px-6">
-				<Gallery images={info.gallery} />
+				<Gallery images={info.gallery} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4" />
 			</section>
 			{/* CTA Bottom */}
 			<CTA />

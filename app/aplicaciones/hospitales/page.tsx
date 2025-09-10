@@ -1,8 +1,10 @@
+"use client";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -58,7 +60,7 @@ export default function NavesIndustriales() {
 					<img
 						src={info.image}
 						alt="Nave industrial con fachada de paneles SmartPanel"
-						className="rounded-md shadow"
+						className="rounded-md"
 					/>
 				</div>
 			</section>
@@ -98,10 +100,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-panel-para-hospitales-img-02.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60 object-contain"
+							<CldImage
+								src="smart-panel-nave_gqn8zf"
+								alt="Panel SmartPanel instalado en residencia habitacional"
+								width={300}
+								height={100}
+								className="w-80 h-auto"
 							/>
 						</div>
 					</div>
@@ -109,8 +113,21 @@ export default function NavesIndustriales() {
 			</section>
 
 			{/* Image Gallery */}
-			<section className="py-16 bg-white max-w-6xl mx-auto px-6">
-				<Gallery images={info.gallery} />
+			<section className="py-16 bg-white max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10">
+				<CldImage
+					src="smart-panel-panel-para-hospitales-img-01_h0uxes"
+					alt="Panel SmartPanel instalado en residencia habitacional"
+					width={648}
+					height={487}
+					className="w-full"
+				/>
+				<CldImage
+					src="smart-panel-nave-600x294_zbvebp"
+					alt="Panel SmartPanel instalado en residencia habitacional"
+					width={648}
+					height={487}
+					className="w-full"
+				/>
 			</section>
 			{/* CTA Bottom */}
 			<CTA />

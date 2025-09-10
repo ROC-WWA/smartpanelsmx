@@ -1,8 +1,11 @@
+"use client";
+import CallUs from "@/app/_components/callus";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -99,36 +102,21 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+							<CldImage
+								src="smart-panel-aplicacion-residencial-2-300x300_otvri2"
+								alt="Panel SmartPanel instalado en residencia habitacional"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>
 				</div>
 			</section>
 			{/* Natural Lighting Section */}
-			<section className="bg-white py-16">
-				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-6 items-center">
-					<div>
-						<p className="text-gray-700 text-lg mb-4">
-							{info.section.text}
-						</p>
-						<p className="text-green-500 font-semibold text-lg mb-4">
-							<i className="fas fa-phone-alt mr-2" /> +52 1 56 1019 7622
-						</p>
-					</div>
-					<img
-						src={info.section.image}
-						alt="Panel acrílico translúcido instalado en techo industrial"
-						className="rounded-md shadow"
-					/>
-				</div>
-			</section>
 			{/* Image Gallery */}
 			<section className="py-16 bg-white max-w-6xl mx-auto px-6">
-				<Gallery images={info.gallery} />
+				<Gallery images={info.gallery} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6" />
 			</section>
 			{/* CTA Bottom */}
 			<CTA />

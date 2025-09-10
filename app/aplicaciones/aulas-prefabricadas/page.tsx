@@ -1,8 +1,11 @@
+"use client";
+import CallUs from "@/app/_components/callus";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
 import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -10,7 +13,7 @@ const info = {
 	description:
 		"El panel sándwich SP, es una solución ideal para la construcción de aulas escolares, salones temporales, laboratorios y espacios educativos modulares, gracias a su practicidad, velocidad de montaje y excelente relación calidad-precio. Su diseño ligero y modular permite crear espacios seguros, funcionales y con un acabado estético limpio, reduciendo tiempos de ejecución y costos de obra. Es perfecto para proyectos educativos que requieren resultados inmediatos sin sacrificar confort ni durabilidad.",
 	cta: "Cotiza Ahora",
-	image: "/smart-panel-panel-para-residencias-habitacionales-img-01.webp",
+	image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513789/smart-panel-aplicaciones-aulas-2_jsgd4t.webp",
 	advantageTitle: "Ventajas clave:",
 	adaventages: [
 		"Fácil y rápida instalación",
@@ -107,10 +110,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+							<CldImage
+								src="smart-panel-aplicaciones-aulas-3-460x460_1_ju7dac"
+								alt="Panel SmartPanel instalado en residencia habitacional"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>
@@ -123,9 +128,7 @@ export default function NavesIndustriales() {
 						<p className="text-gray-700 text-lg mb-4">
 							{info.section.text}
 						</p>
-						<p className="text-green-500 font-semibold text-lg mb-4">
-							<i className="fas fa-phone-alt mr-2" /> +52 1 56 1019 7622
-						</p>
+						<CallUs />
 					</div>
 					<img
 						src={info.section.image}

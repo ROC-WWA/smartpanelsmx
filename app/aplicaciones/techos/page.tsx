@@ -1,7 +1,10 @@
+"use client";
 import CTA from "@/app/_components/cta";
 import Gallery from "@/app/_components/gallery";
+import ImageHeader from "@/app/_components/image-header";
 import Title from "@/app/_components/title";
 import { Check } from "lucide-react";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
 const info = {
@@ -39,7 +42,7 @@ const info = {
 						</ul>
   </>,
 	cta: "Cotiza Ahora",
-	image: "/smart-panel-aplicacion-nave-industrial-3.webp",
+	image: "https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513784/smart-panel-aplicacion-techo-01_hanqek.png",
 	advantageTitle: "Construye techos inteligentes con panel SP.:",
 	adaventages: [
 		"Jardines y patios techados",
@@ -76,8 +79,7 @@ export default function NavesIndustriales() {
 	return (
 		<>
 			{/* Hero Section */}
-			<Title>{info.title}</Title>
-			{/* Description */}
+			<ImageHeader title={info.title} backgroundImage={"https://res.cloudinary.com/dbl4j1i1f/image/upload/v1754513787/smart-panel-aplicacion-techo-scaled_nvdzrp.png"} />			{/* Description */}
 			<section className="bg-white py-16">
 				<div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center px-6">
 					<div>
@@ -134,10 +136,12 @@ export default function NavesIndustriales() {
 							</div>
 						</div>
 						<div className="flex justify-center items-center">
-							<img
-								src="/smart-panel-aplicacion-nave-industrial-2-300x300.webp"
-								alt="Panel SmartPanel instalado en nave industrial"
-								className="rounded-full shadow size-60"
+							<CldImage
+								src="smart-panel-aplicacion-techo-03-460x460_qxsakj"
+								alt="Panel SmartPanel instalado en residencia habitacional"
+								width={300}
+								height={300}
+								className="rounded-full shadow size-80"
 							/>
 						</div>
 					</div>
@@ -146,7 +150,7 @@ export default function NavesIndustriales() {
 
 			{/* Image Gallery */}
 			<section className="py-16 bg-white max-w-6xl mx-auto px-6">
-				<Gallery images={info.gallery} />
+				<Gallery images={info.gallery} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4" />
 			</section>
 			{/* CTA Bottom */}
 			<CTA />
