@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { CldImage } from "next-cloudinary"
+import { ArrowDown, ChevronDown, Plus } from "lucide-react"
 
 interface GridItem {
   id: number
@@ -69,18 +70,25 @@ export function ImageGrid() {
 
   return (
 		<>
-		<div className="md:hidden">
+		<div className="space-y-4 mb-8 md:hidden">
 			{gridItems.map((item) => (
-				<div
-				key={item.id}
-				className="bg-neutral-800 mb-4 p-4 rounded-md flex flex-col items-center text-center">
-				<h3 className="text-xl text-white font-semibold mb-2">{item.title}</h3>
-				<h3 className="text-lg text-white font-semibold mb-2">{item.subtitle}</h3>
-				<p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
-				</div>
+				<details className="rounded-md group transition-all duration-300 marker::none open:bg-green-500" key={item.id}>
+					<summary className="py-18 px-4 font-semibold cursor-pointer bg-neutral-600 text-white group-open:bg-neutral-800 rounded-2xl group-open:rounded-b-none relative list-none" style={{ backgroundImage: `url(https://res.cloudinary.com/dbl4j1i1f/image/upload/v1696548668/${item.image}.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+						<div>
+							<ChevronDown className="absolute bottom-4 left-1/2 -translate-x-1/2 w-6 h-6 text-white z-10 group-open:rotate-180 transition-transform duration-300" />
+						</div>
+						<div className="absolute inset-0 bg-black/50 rounded-2xl group-open:rounded-b-none"></div>
+						<div className="text-white relative z-10 text-center">
+							{item.title}
+						</div>
+					</summary>
+					<div className="p-4 mt-2 text-gray-600 bg-neutral-800 rounded-b-2xl">
+						<h4 className="text-sm font-bold text-white mb-2">{item.subtitle}</h4>
+						<p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
+					</div>
+				</details>
 			))}
 		</div>
-
 
     <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {gridItems.map((item) => (
@@ -90,7 +98,7 @@ export function ImageGrid() {
           onMouseEnter={() => setHoveredItem(item.id)}
           onMouseLeave={() => setHoveredItem(null)}
         >
-          <div className="aspect-[5/4] relative">
+          <div className="aspect-[1/1] relative">
             <CldImage
               src={item.image}
               alt={item.title}
@@ -99,7 +107,7 @@ export function ImageGrid() {
             />
 
             {/* Title overlay - always visible */}
-            <div className="absolute bottom-0 left-0 right-0 bg-green-500 backdrop-blur-sm p-4">
+            <div className="absolute bottom-0 left-0 right-0 bg-green-500 backdrop-blur-sm p-2">
               <h3 className="text-lg font-semibold text-white text-center">{item.title}</h3>
             </div>
 
@@ -111,7 +119,7 @@ export function ImageGrid() {
             >
               <div className="text-center">
                 <h3 className="text-xl font-bold text-green-500 mb-2">{item.title}</h3>
-				<h3 className="text-sm font-bold text-white mb-2">{item.subtitle}</h3>
+								<h4 className="text-sm font-bold text-white mb-2">{item.subtitle}</h4>
                 <p className="text-white/90 text-sm leading-relaxed">{item.description}</p>
               </div>
             </div>
