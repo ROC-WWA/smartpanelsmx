@@ -72,7 +72,7 @@ export function ImageGrid() {
 		<>
 		<div className="space-y-4 mb-8 md:hidden">
 			{gridItems.map((item) => (
-				<details className="rounded-md group transition-all duration-300 marker::none open:bg-green-500" key={item.id}>
+				<details className="rounded-2xl group transition-all duration-300 marker::none open:bg-green-500" key={item.id}>
 					<summary className="py-18 px-4 font-semibold cursor-pointer bg-neutral-600 text-white group-open:bg-neutral-800 rounded-2xl group-open:rounded-b-none relative list-none" style={{ backgroundImage: `url(https://res.cloudinary.com/dbl4j1i1f/image/upload/v1696548668/${item.image}.webp)`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
 						<div>
 							<ChevronDown className="absolute bottom-4 left-1/2 -translate-x-1/2 w-6 h-6 text-white z-10 group-open:rotate-180 transition-transform duration-300" />
